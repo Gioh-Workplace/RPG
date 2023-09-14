@@ -5,7 +5,7 @@
   
   
 ## Funcionalidade 2 
-- Register User page - email, senha e usuário
+- Login User page - email, senha e usuário
 
 ![LoginTela](https://github.com/Gioh-Workplace/RPG/assets/56047994/f6a76c88-d229-4413-86b9-fd900aacb6c1)
 
