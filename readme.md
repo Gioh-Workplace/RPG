@@ -2,7 +2,7 @@
 - Home page - não logada 
 - jogar o jogo, acessar top 10, área login/registro, créditos
 
-  
+  ![HomePage](Gioh-Workplace/RPG/assets/HomePage.jpeg) 
   
 ## Funcionalidade 2 
 - Login User page - email, senha e usuário
@@ -30,12 +30,19 @@
   
 ## Funcionalidade 8
 - Game page - forma como o jogo será
+
+![GamePage](Gioh-Workplace/RPG/assets/GamePage.jpeg)
   
 ## Funcionalidade 9 
 - Death page - página de fim de jogo
+
+![DeathPage](Gioh-Workplace/RPG/assets/DeathPage.jpeg)
+
   
 ## Funcionalidade 10 
 - Admin page - organizar os bancos
+
+![AdminPage](Gioh-Workplace/RPG/assets/AdminPage.jpeg)
   
 ## Funcionalidades do jogo
 - Sistema de Random Number Generator para randomizar as salas, sistema de pontuação, botões com opções pré definidas para cada situação, exibição de texto padronizada em uma caixa.
