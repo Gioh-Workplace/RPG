@@ -23,17 +23,17 @@
 ## Funcionalidade 5
 - Créditos - Acessar uma página com créditos aos autores e seus githubs
   
-![Creditos](https://github.com/Gioh-Workplace/RPG/blob/d529eb113ec4faf436d24f9ee0c5cdc08a4d1166/creditos.png)
+![creditos](https://github.com/Gioh-Workplace/RPG/assets/142634628/63fb94f8-ad12-4a4e-9183-60809baca20f)
 
 ## Funcionalidade 6
 - Sobre page - informações adicionais sobre o jogo
   
-![AboutPage](https://github.com/Gioh-Workplace/RPG/blob/794eaeedc402943a1a7caa57ea94cd3041009998/sobre.png)
+![sobre](https://github.com/Gioh-Workplace/RPG/assets/142634628/b0602f8d-d704-4ba4-9527-bebde30f726f)
 
 ## Funcionalidade 7
 - Loading page - página para carregar o jogo quando for inicializado
   
-![LoadingPage](https://github.com/Gioh-Workplace/RPG/blob/794eaeedc402943a1a7caa57ea94cd3041009998/loading.png)
+![loading](https://github.com/Gioh-Workplace/RPG/assets/142634628/509da517-0418-44c6-989b-9b34f52899f6)
 
 ## Funcionalidade 8
 - Game page - forma como o jogo será
