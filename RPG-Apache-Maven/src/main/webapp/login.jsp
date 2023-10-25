@@ -14,8 +14,8 @@
         <img src="img/logo.png" class="logo" alt="logo" id="logo">
         <div class="barraInferior"></div>
     </a>
-    <a href="sobre.jsp">Sobre</a>
-    <a href="cadastro.jsp">Login</a>
+    <a href="#">Sobre</a>
+    <a href="login.jsp">Login</a>
 </div>
 <h1> Login </h1>
 <div class="form-container">
