@@ -21,19 +21,19 @@
         <img src="img/logo.png" class="logo" alt="logo" id="logo">
         <div class="barraInferior"></div>
     </a>
-    <a href="#">Sobre</a>
+    <a href="sobre.jsp">Sobre</a>
     <a href="login.jsp">Login</a>
 </div>
 
 <div class="content">
 
     <div class="creator creator1">
-    <div class="image">
-        <img src="img/PFP%20IA.jpg" class="creator_image" alt="first_creator_photo" id="Creator1">
-    </div>
+        <div class="image">
+            <img src="img/PFP%20IA.jpg" class="creator_image" alt="first_creator_photo" id="Creator1">
+        </div>
         <div class="text">
             <p>Giovani</p>
-        <span class="paragraph">
+            <span class="paragraph">
         Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Suspendisse eget lacus<br> non neque fringilla convallis.<br> Donec quam justo, mollis et nulla sed, iaculis imperdiet ipsum. Nunc sed fermentum sem, vel pretium ex. Nullam scelerisque mauris eget nibh euismod vehicula. Proin mi nunc, cursus sed metus sed, elementum consectetur massa. Praesent lorem urna, gravida a accumsan ac, lobortis ac est. Integer magna ipsum, elementum non tincidunt eget, pellentesque ac nisi. Nulla ornare ullamcorper ipsum at egestas.
 
         </span>
@@ -74,7 +74,7 @@
     </div>
     <div class="creator creator4">
         <div class="image">
-            <img src="img/Agatha%20pfp.jpg" class="creator_image" alt="first_creator_photo" id="Creator4">
+            <img src="img/Agatha%20Pfp.jpg" class="creator_image" alt="first_creator_photo" id="Creator4">
         </div>
         <div class="text">
             <p>Agatha</p>
