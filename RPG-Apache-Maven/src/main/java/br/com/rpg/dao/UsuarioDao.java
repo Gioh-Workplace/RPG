@@ -1,10 +1,12 @@
 package br.com.rpg.dao;
 
+import br.com.rpg.config.ConnectionPoolConfig;
 import br.com.rpg.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UsuarioDao {
 
@@ -13,9 +15,8 @@ public class UsuarioDao {
         String SQL = "CREATE TABLE IF NOT EXISTS USUARIO (ID INT AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL, SENHA VARCHAR(255) NOT NULL)";
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
-            System.out.println("conexao feita com sucesso");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -37,9 +38,8 @@ public class UsuarioDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
-            System.out.println("conexao feita com sucesso");
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1, user.getUsername());
@@ -55,6 +55,46 @@ public class UsuarioDao {
             System.out.println("erro na conexao");
         }
 
+    }
+
+    public boolean verificarCredencial(Usuario usuario) {
+
+        String SQL = "SELECT * FROM USUARIO WHERE USERNAME = ?";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, usuario.getUsername());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            System.out.println("Sucesso em selecionar username");
+            while (resultSet.next()) {
+
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("senha");
+
+                if (email.equals(usuario.getEmail()) && password.equals(usuario.getSenha())) {
+
+                    return true;
+
+                }
+
+            }
+
+
+            connection.close();
+
+            return false;
+
+        } catch (Exception e) {
+
+            System.out.println("Erro: " + e.getMessage());
+
+            return false;
+
+        }
     }
 
 
