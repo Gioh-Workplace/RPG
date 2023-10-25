@@ -12,8 +12,8 @@
 
 <div class="menu">
     <a href="#">Ranking</a>
-    <a href="#">Creditos</a>
-    <a href="#">
+    <a href="creditos.jsp">Creditos</a>
+    <a href="index.jsp">
         <img src="img/logo.png" class="logo" alt="logo" id="logo">
         <div class="barraInferior"></div>
     </a>
