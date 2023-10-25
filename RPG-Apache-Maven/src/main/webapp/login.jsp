@@ -15,7 +15,7 @@
         <div class="barraInferior"></div>
     </a>
     <a href="#">Sobre</a>
-    <a href="cadastro.jsp">Login</a>
+    <a href="login.jsp">Login</a>
 </div>
 <h1> Login </h1>
 <div class="form-container">

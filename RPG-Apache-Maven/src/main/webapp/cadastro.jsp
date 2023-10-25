@@ -19,10 +19,10 @@
 </div>
 <h1> Cadastro </h1>
 <div class="form-container">
-    <form id="registration-form">
-        <input type="text" placeholder="User" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Senha" required>
+    <form action="/create-user" method="post" id="registration-form">
+        <input type="text" name="username" id="username" placeholder="User" required>
+        <input type="email" name="emailUser" id="emailUser" placeholder="Email" required>
+        <input type="password" name="senhaUser" id="senhaUser" placeholder="Senha" required>
         <input type="password" placeholder="Confirme Senha" required>
         <button type="submit">Criar</button>
     </form>
