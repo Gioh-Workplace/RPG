@@ -20,6 +20,7 @@
 <h1> Login </h1>
 <div class="form-container">
     <form action="/login" method="post" id="registration-form">
+        <h5>${requestScope.message}</h5>
         <input type="text" name="username" id="username" placeholder="User" required>
         <input type="email" name="emailUser" id="emailUser" placeholder="Email" required>
         <input type="password" name="senhaUser" id="senhaUser" placeholder="Senha" required>
