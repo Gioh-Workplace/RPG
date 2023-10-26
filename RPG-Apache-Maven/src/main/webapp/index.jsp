@@ -17,11 +17,12 @@
             <img src="img/logo.png" class="logo" alt="logo" id="logo">
             <div class="barraInferior"></div>
         </a>
-        <a href="#">Sobre</a>
+        <a href="sobre.jsp">Sobre</a>
         <a href="login.jsp">${sessionScope.loggedUser}</a> <a href="/logout"> Logout</a>
     </div>
 </c:if>
 
+<<<<<<< HEAD
 <c:if test="${sessionScope.loggedUser == null}">
     <div class="menu">
         <a href="#">Ranking</a>
@@ -30,11 +31,10 @@
             <img src="img/logo.png" class="logo" alt="logo" id="logo1">
             <div class="barraInferior"></div>
         </a>
-        <a href="#">Sobre</a>
+        <a href="sobre.jsp">Sobre</a>
         <a href="login.jsp">Login</a>
     </div>
 </c:if>
-
 <div class="content">
     <a href="#" class="play-button">JOGAR</a>
 </div>

@@ -53,3 +53,8 @@
   
 ## Funcionalidades do jogo
 - Sistema de Random Number Generator para randomizar as salas, sistema de pontuação, botões com opções pré definidas para cada situação, exibição de texto padronizada em uma caixa.
+
+## Conceito banco de dados
+- Feito utilizando BRModelo
+- ![Conceito MER PI](https://github.com/Gioh-Workplace/RPG/assets/142634628/712dc538-e352-4be6-9168-c94f53ada3cf)
+
