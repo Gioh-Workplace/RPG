@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <head>
     <meta charset="UTF-8">
@@ -7,19 +8,32 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-
 <body>
+<c:if test="${sessionScope.loggedUser != null}">
+    <div class="menu">
+        <a href="#">Ranking</a>
+        <a href="creditos.jsp">Creditos</a>
+        <a href="index.jsp">
+            <img src="img/logo.png" class="logo" alt="logo" id="logo">
+            <div class="barraInferior"></div>
+        </a>
+        <a href="#">Sobre</a>
+        <a href="login.jsp">${sessionScope.loggedUser}</a> <a href="/logout"> Logout</a>
+    </div>
+</c:if>
 
-<div class="menu">
-    <a href="#">Ranking</a>
-    <a href="creditos.jsp">Creditos</a>
-    <a href="index.jsp">
-        <img src="img/logo.png" class="logo" alt="logo" id="logo">
-        <div class="barraInferior"></div>
-    </a>
-    <a href="#">Sobre</a>
-    <a href="login.jsp">Login</a>
-</div>
+<c:if test="${sessionScope.loggedUser == null}">
+    <div class="menu">
+        <a href="#">Ranking</a>
+        <a href="creditos.jsp">Creditos</a>
+        <a href="index.jsp">
+            <img src="img/logo.png" class="logo" alt="logo" id="logo1">
+            <div class="barraInferior"></div>
+        </a>
+        <a href="#">Sobre</a>
+        <a href="login.jsp">Login</a>
+    </div>
+</c:if>
 
 <div class="content">
     <a href="#" class="play-button">JOGAR</a>
