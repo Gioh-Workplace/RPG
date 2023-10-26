@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+
+p {
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+nav a:hover {
+    color:black;
+}
+
+.heart-icon {
+    color: pink;
+    font-size: 24px;
+}
+
+.title {
+    font-size: 36px;
+    margin-top: 50px;
+    text-align:center;
+}
+
+.text-block {
+    background-color: black;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: -30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    border-radius: 10px;
+}
+
+
