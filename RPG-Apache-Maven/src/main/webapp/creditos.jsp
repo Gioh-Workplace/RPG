@@ -74,7 +74,7 @@
     </div>
     <div class="creator creator4">
         <div class="image">
-            <img src="img/Agatha%20Pfp.jpg" class="creator_image" alt="first_creator_photo" id="Creator4">
+            <img src="img/Agatha%20Pfp.PNG" class="creator_image" alt="first_creator_photo" id="Creator4">
         </div>
         <div class="text">
             <p>Agatha</p>
