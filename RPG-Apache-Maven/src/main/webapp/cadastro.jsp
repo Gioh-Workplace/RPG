@@ -20,6 +20,7 @@
 <h1> Cadastro </h1>
 <div class="form-container">
     <form action="/create-user" method="post" id="registration-form">
+        <h5>${requestScope.mensagemInvalida}</h5>
         <input type="text" name="username" id="username" placeholder="User" required>
         <input type="email" name="emailUser" id="emailUser" placeholder="Email" required>
         <input type="password" name="senhaUser" id="senhaUser" placeholder="Senha" required>
