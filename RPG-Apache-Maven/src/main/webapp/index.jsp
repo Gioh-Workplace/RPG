@@ -27,7 +27,7 @@
         document.body.innerHTML = "<h1>Você clicou no botão PLAY!</h1>";
     }
 </script>
-</div>
+
 
 </body>
 
