@@ -57,8 +57,8 @@ public class UsuarioDao {
 
     }
 
-    public void updateUser(Usuario usuario, String newUsername) {
-        String SQL = "UPDATE USUARIO SET USERNAME = ? WHERE USERNAME = ?";
+    public void updateUser(Usuario usuario, String newUsername, String fieldToUpdate) {
+        String SQL = "UPDATE USUARIO SET " + fieldToUpdate.toUpperCase() + " = ? WHERE USERNAME = ?";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
