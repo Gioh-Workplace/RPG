@@ -18,16 +18,59 @@ public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         String loggedUser = (String) session.getAttribute("loggedUser");
+        String emailUser = (String) session.getAttribute("emailUsuario");
+        String senhaUser = (String) session.getAttribute("senhaUsuario");
 
-        String newUsername = req.getParameter("username");
-
-        Usuario usuario = new Usuario(loggedUser);
+        String fieldToUpdate = req.getParameter("fieldToUpdate");
 
         UsuarioDao usuarioDao = new UsuarioDao();
 
-        usuarioDao.updateUser(usuario, newUsername);
+        Usuario usuario = new Usuario(loggedUser, emailUser, senhaUser);
+        String newUsername = req.getParameter("username");
+        String newEmail = req.getParameter("emailUser");
+        String newSenha = req.getParameter("senhaUser");
 
-        req.getSession().setAttribute("loggedUser", newUsername);
+        Usuario aux = new Usuario(newUsername, newEmail, newSenha);
+        boolean isCadastrado = usuarioDao.verificarCadastro(aux);
+        switch (fieldToUpdate) {
+            case "username":
+
+                if (isCadastrado) {
+
+                    System.out.println("Cadastrado");
+
+                    req.setAttribute("erroUpdate", "Ja existe um username ou email com esse padrao");
+
+
+                } else {
+                    usuarioDao.updateUser(usuario, newUsername, fieldToUpdate);
+                    req.getSession().setAttribute("loggedUser", newUsername);
+                    break;
+
+                }
+
+            case "email":
+
+                if (isCadastrado) {
+
+                    System.out.println("Cadastrado");
+
+                    req.setAttribute("erroUpdate", "Ja existe um username ou email com esse padrao");
+
+                } else {
+                    usuarioDao.updateUser(usuario, newEmail, fieldToUpdate);
+                    req.getSession().setAttribute("emailUsuario", newEmail);
+                    break;
+
+                }
+
+            case "senha":
+                usuarioDao.updateUser(usuario, newSenha, fieldToUpdate);
+                req.getSession().setAttribute("senhaUsuario", newSenha);
+                break;
+        }
+
+        System.out.println(fieldToUpdate);
 
         req.getRequestDispatcher("perfil.jsp").forward(req, resp);
 
