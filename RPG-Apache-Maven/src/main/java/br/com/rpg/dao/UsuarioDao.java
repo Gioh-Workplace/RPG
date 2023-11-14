@@ -12,7 +12,7 @@ public class UsuarioDao {
 
 
     public void createTable() {
-        String SQL = "CREATE TABLE IF NOT EXISTS USUARIO (ID INT AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL, SENHA VARCHAR(255) NOT NULL)";
+        String SQL = "CREATE TABLE IF NOT EXISTS USUARIO (ID INT AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL, SENHA VARCHAR(255) NOT NULL, PONTUACAO INT NULL)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -57,6 +57,28 @@ public class UsuarioDao {
 
     }
 
+    public void updateUser(Usuario usuario, String newUsername) {
+        String SQL = "UPDATE USUARIO SET USERNAME = ? WHERE USERNAME = ?";
+
+        try {
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, newUsername);
+            preparedStatement.setString(2, usuario.getUsername());
+            preparedStatement.execute();
+
+            System.out.println("Sucesso em atualizar username");
+
+            connection.close();
+
+
+        } catch (Exception e) {
+
+        }
+    }
+
     public boolean verificarCredencial(Usuario usuario) {
 
         String SQL = "SELECT * FROM USUARIO WHERE USERNAME = ?";
@@ -95,6 +117,37 @@ public class UsuarioDao {
             return false;
 
         }
+    }
+
+    public boolean verificarCadastro(Usuario usuario) {
+
+        String SQL = "SELECT * FROM USUARIO";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                if(resultSet.getString("username").equals(usuario.getUsername()) || resultSet.getString("email").equals(usuario.getEmail())) {
+                    System.out.println("Usuario ja cadastrado");
+                    return true;
+                } else {
+                    return false;
+                }
+
+            }
+
+            connection.close();
+            return false;
+
+        } catch (Exception e) {
+            System.out.println("Error: "+e.getMessage() );
+            return false;
+        }
+
     }
 
 

@@ -9,6 +9,8 @@
     <title>Document</title>
 </head>
 <body>
+<style>
+</style>
 <c:if test="${sessionScope.loggedUser != null}">
     <div class="menu">
         <a href="#">Ranking</a>
@@ -18,7 +20,13 @@
             <div class="barraInferior"></div>
         </a>
         <a href="sobre.jsp">Sobre</a>
-        <a href="login.jsp">${sessionScope.loggedUser}</a> <a href="/logout"> Logout</a>
+        <div class="dropdown">
+            <a href="#">Perfil</a>
+            <div class="dropdown-content">
+                <a href="perfil.jsp">Meu Perfil</a>
+                <a href="/logout">Sair</a>
+            </div>
+        </div>
     </div>
 </c:if>
 
