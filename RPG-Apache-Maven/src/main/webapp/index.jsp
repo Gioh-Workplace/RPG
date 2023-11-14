@@ -23,7 +23,7 @@
         <div class="dropdown">
             <a href="#">Perfil</a>
             <div class="dropdown-content">
-                <a href="#">Meu Perfil</a>
+                <a href="perfil.jsp">Meu Perfil</a>
                 <a href="/logout">Sair</a>
             </div>
         </div>
