@@ -51,6 +51,11 @@
             <input type="hidden" name="fieldToUpdate" value="senha">
             <button> Alterar </button>
         </form>
+
+    <form action="/delete" id="delete-button" method="post">
+        <h4>Deletar conta: </h4>
+        <button>Deletar</button>
+    </form>
 </div>
 
 
