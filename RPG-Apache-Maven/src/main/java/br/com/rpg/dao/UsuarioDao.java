@@ -57,6 +57,28 @@ public class UsuarioDao {
 
     }
 
+    public void updateUser(Usuario usuario, String newUsername) {
+        String SQL = "UPDATE USUARIO SET USERNAME = ? WHERE USERNAME = ?";
+
+        try {
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, newUsername);
+            preparedStatement.setString(2, usuario.getUsername());
+            preparedStatement.execute();
+
+            System.out.println("Sucesso em atualizar username");
+
+            connection.close();
+
+
+        } catch (Exception e) {
+
+        }
+    }
+
     public boolean verificarCredencial(Usuario usuario) {
 
         String SQL = "SELECT * FROM USUARIO WHERE USERNAME = ?";
