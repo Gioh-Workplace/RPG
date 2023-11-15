@@ -19,7 +19,7 @@
         <a href="#">Ranking</a>
         <a href="creditos.jsp">Creditos</a>
         <a href="index.jsp">
-            <img src="img/logo.png" class="logo" alt="logo" id="logo">
+            <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
             <div class="barraInferior"></div>
         </a>
         <a href="sobre.jsp">Sobre</a>
@@ -38,7 +38,7 @@
         <a href="#">Ranking</a>
         <a href="creditos.jsp">Creditos</a>
         <a href="index.jsp">
-            <img src="img/logo.png" class="logo" alt="logo" id="logo1">
+            <img src="img/logo.jpg" class="logo" alt="logo" id="logo1">
             <div class="barraInferior"></div>
         </a>
         <a href="sobre.jsp">Sobre</a>
@@ -95,7 +95,7 @@
     </div>
     <div class="creator creator4">
         <div class="image">
-            <img src="img/Agatha%20Pfp.PNG" class="creator_image" alt="first_creator_photo" id="Creator4">
+            <img src="img/Agatha%20Pfp.jpeg" class="creator_image" alt="first_creator_photo" id="Creator4">
         </div>
         <div class="text">
             <p>Agatha</p>

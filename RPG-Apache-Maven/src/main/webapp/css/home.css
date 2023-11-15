@@ -1,0 +1,140 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+
+}
+
+
+.menu {
+    border-radius: 47px;
+    border: 3px solid #FFF;
+    background: #000;
+    width: 1372px;
+    height: 140px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Adicione esta linha */
+}
+
+.menu a {
+    position: relative;
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 143px;
+    margin: 0 40px 0 40px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.barraInferior {
+    position: absolute;
+    background: #ffffff;
+    width: 165px;
+    height: 6px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 127px;
+    height: 123px;
+    flex-shrink: 0;
+    bottom: 0;
+}
+
+
+
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 36px;
+    margin-top: 50px;
+    text-align:center;
+}
+
+.button {
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 11px;
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+}
+.image {
+    width:75%;
+    height: 75%;
+    background-image: url(/img/fundohome.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 205px;
+    left: 505px;
+
+
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.play-button {
+    border: 2px solid white;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+
+}
+.play-button:hover {
+    background: white;
+    color: black;
+}
+.menu a:hover {
+    background: white;
+    color: black;
+}
+
+/*  Menu dropdown abaixo */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    color: #FFF;
+    width: 250px;
+    border: 2px solid white;
+    border-radius: 2px;
+    padding-bottom: 5px;
+
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
