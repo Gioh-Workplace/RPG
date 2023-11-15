@@ -79,6 +79,28 @@ public class UsuarioDao {
         }
     }
 
+    public void deleteUser(Usuario usuario) {
+        String SQL = "DELETE FROM USUARIO WHERE USERNAME = ?";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setString(1, usuario.getUsername());
+            preparedStatement.execute();
+
+            System.out.println("Sucesso em deletar usuario");
+
+            connection.close();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Erro no delete");
+        }
+    }
+
     public boolean verificarCredencial(Usuario usuario) {
 
         String SQL = "SELECT * FROM USUARIO WHERE USERNAME = ?";
@@ -131,7 +153,7 @@ public class UsuarioDao {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                if(resultSet.getString("username").equals(usuario.getUsername()) || resultSet.getString("email").equals(usuario.getEmail())) {
+                if (resultSet.getString("username").equals(usuario.getUsername()) || resultSet.getString("email").equals(usuario.getEmail())) {
                     System.out.println("Usuario ja cadastrado");
                     return true;
                 } else {
@@ -144,7 +166,7 @@ public class UsuarioDao {
             return false;
 
         } catch (Exception e) {
-            System.out.println("Error: "+e.getMessage() );
+            System.out.println("Error: " + e.getMessage());
             return false;
         }
 

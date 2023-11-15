@@ -3,10 +3,20 @@ h2 {
     align-items: center;
     justify-content: center;
     display: flex;
-    padding-top: 19px;
+    padding-top: 5px;
     font-size: 50px;
 }
 
+#delete-button h4 {
+   padding-left: 6px;
+
+}
+h6 {
+    position: absolute;
+    top: 0;
+    left: 5;
+    color: red;
+}
 
 .form-container a {
     color: white;
@@ -59,7 +69,7 @@ h2 {
     border-radius: 15px;
 }
 
-#username-update button, #email-update button, #password-update button {
+#username-update button, #email-update button, #password-update button, #delete-button button {
     width: 20%;
     padding: 10px;
     border: 2px solid #FFF;
@@ -71,5 +81,10 @@ h2 {
 }
 #username-update button:hover, #email-update button:hover, #password-update button:hover {
     background: #000;
+    color: #FFF;
+}
+
+#delete-button button:hover {
+    background: #FF0000;
     color: #FFF;
 }
