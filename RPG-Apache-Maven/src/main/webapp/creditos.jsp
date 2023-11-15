@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
 
     <meta charset="UTF-8">
@@ -14,19 +14,42 @@
 
 <body>
 
-<div class="menu">
-    <a href="#">Ranking</a>
-    <a href="#">Creditos</a>
-    <a href="index.jsp">
-        <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
-        <div class="barraInferior"></div>
-    </a>
-    <a href="sobre.jsp">Sobre</a>
-    <a href="login.jsp">Login</a>
-</div>
+
+<c:if test="${sessionScope.loggedUser != null}">
+    <div class="menu">
+        <a href="#">Ranking</a>
+        <a href="creditos.jsp">Creditos</a>
+        <a href="index.jsp">
+            <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
+            <div class="barraInferior"></div>
+        </a>
+        <a href="sobre.jsp">Sobre</a>
+        <div class="dropdown">
+            <a href="#">Perfil</a>
+            <div class="dropdown-content">
+                <a href="perfil.jsp">Meu Perfil</a>
+                <a href="/logout">Sair</a>
+            </div>
+        </div>
+    </div>
+</c:if>
+
+<c:if test="${sessionScope.loggedUser == null}">
+    <div class="menu">
+        <a href="#">Ranking</a>
+        <a href="creditos.jsp">Creditos</a>
+        <a href="index.jsp">
+            <img src="img/logo.png" class="logo" alt="logo" id="logo1">
+            <div class="barraInferior"></div>
+        </a>
+        <a href="sobre.jsp">Sobre</a>
+        <a href="login.jsp">Login</a>
+    </div>
+</c:if>
+
+
 
 <div class="content">
-
     <div class="creator creator1">
         <div class="image">
             <img src="img/PFP%20IA.jpg" class="creator_image" alt="first_creator_photo" id="Creator1">
@@ -74,7 +97,7 @@
     </div>
     <div class="creator creator4">
         <div class="image">
-            <img src="img/Agatha%20Pfp.jpg" class="creator_image" alt="first_creator_photo" id="Creator4">
+            <img src="img/Agatha%20Pfp.PNG" class="creator_image" alt="first_creator_photo" id="Creator4">
         </div>
         <div class="text">
             <p>Agatha</p>

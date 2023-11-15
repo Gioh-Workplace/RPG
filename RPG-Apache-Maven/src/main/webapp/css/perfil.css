@@ -1,0 +1,90 @@
+h2 {
+    color: #FFF;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 5px;
+    font-size: 50px;
+}
+
+#delete-button h4 {
+   padding-left: 6px;
+
+}
+h6 {
+    position: absolute;
+    top: 0;
+    left: 5;
+    color: red;
+}
+
+.form-container a {
+    color: white;
+}
+.form-container a:hover {
+    color: darkred;
+}
+
+.form-container {
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    color: #FFF;
+    border-radius: 47px;
+    border: 3px solid #FFF;
+    padding: 20px;
+    width: 500px;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    margin-top: 10px;
+    transform: translate(-50%, -50%);
+}
+#email-update input {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #FFF;
+    margin-bottom: 5px;
+    background: white;
+    color: #000;
+    border-radius: 15px;
+}
+
+#username-update input {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #FFF;
+    margin-bottom: 5px;
+    background: white;
+    color: #000;
+    border-radius: 15px;
+}
+
+#password-update input {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #FFF;
+    margin-bottom: 5px;
+    background: white;
+    color: #000;
+    border-radius: 15px;
+}
+
+#username-update button, #email-update button, #password-update button, #delete-button button {
+    width: 20%;
+    padding: 10px;
+    border: 2px solid #FFF;
+    border-radius: 15px;
+    margin-top: 5px;
+    background: white;
+    color: #000;
+    margin-left: 10px;
+}
+#username-update button:hover, #email-update button:hover, #password-update button:hover {
+    background: #000;
+    color: #FFF;
+}
+
+#delete-button button:hover {
+    background: #FF0000;
+    color: #FFF;
+}
