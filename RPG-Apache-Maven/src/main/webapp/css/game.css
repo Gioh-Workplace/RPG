@@ -1,0 +1,123 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+
+}
+
+
+.menu {
+    border-radius: 47px;
+    border: 3px solid #FFF;
+    background: #000;
+    width: 1372px;
+    height: 140px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Adicione esta linha */
+}
+
+.menu a {
+    position: relative;
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 143px;
+    margin: 0 40px 0 40px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.barraInferior {
+    position: absolute;
+    background: #ffffff;
+    width: 165px;
+    height: 6px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 127px;
+    height: 123px;
+    flex-shrink: 0;
+    bottom: 0;
+}
+
+
+
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 36px;
+    margin-top: 50px;
+    text-align:center;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#board {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#background {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/sala_Cobra.jpg"); /
+background-size: cover;
+}
+
+#square {
+    width: 800px;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+}
+
+#narrator {
+    font-weight: bold;
+}
+
+#speech {
+    font-style: italic;
+}

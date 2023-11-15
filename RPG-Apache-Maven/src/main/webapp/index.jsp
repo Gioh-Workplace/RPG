@@ -6,27 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/home.css">
     <title>Document</title>
+    <style>
+        .play-button {
+            width: 250px;
+            height: 50px;
+            background-color: white;
+            border: none;
+            border-radius: 11px;
+            font-size: 48px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-60%, -50%);
+        }
+    </style>
 </head>
 
 <body>
 
+
 <div class="menu">
     <a href="#">Ranking</a>
-    <a href="creditos.jsp">Creditos</a>index.jsp
+    <a href="creditos.jsp">Creditos</a>
     <a href="index.jsp">
-        <img src="img/logo.png" class="logo" alt="logo" id="logo">
+        <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
         <div class="barraInferior"></div>
     </a>
     <a href="sobre.jsp">Sobre</a>
     <a href="login.jsp">Login</a>
 </div>
+
 <div class="image"></div>
-<button class="button" onclick="play()">PLAY</button>
-<script>
-    function play() {
-        document.body.innerHTML = "<h1>Você clicou no botão PLAY!</h1>";
-    }
-</script>
+
+<a href="Game.jsp">
+    <button class="play-button">PLAY</button>
+</a>
 
 
 </body>
