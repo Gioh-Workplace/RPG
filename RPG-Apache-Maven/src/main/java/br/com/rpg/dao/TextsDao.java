@@ -27,7 +27,6 @@ public class TextsDao {
             System.out.println("Tabela de textos criada");
 
 
-
             connection.close();
 
 
@@ -35,6 +34,7 @@ public class TextsDao {
             System.out.println("Tabela nao criada ou erro na conexao");
         }
     }
+
     public void createTexts(Texts texts) {
 
         String SQL = "INSERT INTO Textos (Nome, Texto) VALUES (?, ?)";
@@ -60,12 +60,12 @@ public class TextsDao {
 
     }
 
-    public Texts[] getTexts(){
+    public Texts[] getTexts() {
         String SQL = "SELECT * FROM TEXTOS";
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
 
             System.out.println("success in database connection");
 
@@ -74,15 +74,15 @@ public class TextsDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             //List<Texts> texts = new ArrayList<>();
             Texts[] texts = new Texts[300];
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 int i = 0;
                 String textName = resultSet.getString("nome");
                 String text = resultSet.getString("texto");
-                Texts t = new Texts(text,textName);
+                Texts t = new Texts(text, textName);
                 texts[i] = t;
                 i++;
             }
-            System.out.println("success in select * car");
+            System.out.println("success in select * texts");
 
             connection.close();
 
@@ -96,6 +96,28 @@ public class TextsDao {
 
     }
 
+    public boolean isEmpty() {
+        String SQL = "SELECT count (*)  FROM TEXTOS";
+
+        try {
+
+            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+
+            System.out.println("success in database connection");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            System.out.println("success in counting");
+
+            connection.close();
+            int a = (int) resultSet.getLong(1);
+            return(a>=10);
+        } catch (Exception e){
+            System.out.println("Erro ao conectar ao banco");
+        }
 
     }
+}
 
