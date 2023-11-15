@@ -17,6 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
+    z-index: 2;
 }
 
 .menu a {
@@ -95,6 +96,10 @@ body {
 }
 .dropdown:hover .dropdown-content {
     display: block;
+
+}
+.dropdown{
+    z-index: 3;
 }
 
 

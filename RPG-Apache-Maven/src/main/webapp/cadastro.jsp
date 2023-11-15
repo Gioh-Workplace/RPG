@@ -9,13 +9,13 @@
 <body>
 <div class="menu">
     <a href="#">Ranking</a>
-    <a href="#">Creditos</a>
+    <a href="creditos.jsp">Creditos</a>
     <a href="index.jsp">
         <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
         <div class="barraInferior"></div>
     </a>
-    <a href="#">Sobre</a>
-    <a href="cadastro.jsp">Login</a>
+    <a href="sobre.jsp">Sobre</a>
+    <a href="login.jsp">Login</a>
 </div>
 <h1> Cadastro </h1>
 <div class="form-container">

@@ -9,48 +9,7 @@ body {
 }
 
 
-.menu {
-    border-radius: 47px;
-    border: 3px solid #FFF;
-    background: #000;
-    width: 1372px;
-    height: 140px;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto; /* Adicione esta linha */
-}
 
-.menu a {
-    position: relative;
-    padding: 10px 20px;
-    color: #FFF;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 143px;
-    margin: 0 40px 0 40px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-}
-
-.barraInferior {
-    position: absolute;
-    background: #ffffff;
-    width: 165px;
-    height: 6px;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .logo {
     width: 127px;
@@ -89,23 +48,26 @@ body {
     height: 600px;
     margin: 0 auto;
     position: relative;
+    z-index: 0;
 }
 
 #background {
-    width: 800px;
-    height: 400px;
+    margin-top: 70px;
+    width: 950px;
+    height: 660px;
     position: absolute;
     top: 0;
     left: 0;
     background-image: url("../img/sala_Cobra.jpg"); /
-background-size: cover;
+    background-size: cover;
+
 }
 
 #square {
-    width: 800px;
+    width: 930px;
     height: 200px;
     position: absolute;
-    bottom: 0;
+    bottom: -120px;
     left: 0;
     background-color: white;
     color: black;

@@ -26,8 +26,7 @@
     </style>
 </head>
 <body>
-<style>
-</style>
+
 <c:if test="${sessionScope.loggedUser != null}">
     <div class="menu">
         <a href="#">Ranking</a>
@@ -59,12 +58,17 @@
         <a href="sobre.jsp">Sobre</a>
         <a href="login.jsp">Login</a>
     </div>
+
 </c:if>
+
 <div class="image"></div>
 <a href="game.jsp">
-    <button class="play-button">PLAY</button>
+    <form action="/CreateTexts" method="post" id="create-texts">
+    <button class="play-button" type="submit">PLAY</button>
+    </form>
 </a>
-</div>
+
+
 
 </body>
 
