@@ -11,15 +11,16 @@ import java.util.List;
 
 public class RankingDAO
 {
-    public List<Usuario> listRankingTop10() {
+    public List<Usuario> listRankingTop(int pontuacaoA) {
 
-        String SQL = "SELECT * FROM USUARIO ORDER BY PONTUACAO DESC LIMIT 10";
+        String SQL = "SELECT * FROM USUARIO WHERE ID > 1 ORDER BY PONTUACAO DESC LIMIT ?";
 
         try {
 
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setInt(1, pontuacaoA);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             List<Usuario> usuarios = new ArrayList<>();
@@ -45,6 +46,34 @@ public class RankingDAO
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             return null;
+        }
+    }
+
+    public int getPontuacaoA() {
+
+        String SQL = "SELECT PONTUACAO FROM USUARIO WHERE ID = 1";
+
+        try
+        {
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            int pontuacaoA = 0;
+
+            while (resultSet.next())
+            {
+                pontuacaoA = resultSet.getInt("pontuacao");
+            }
+
+            System.out.println("Select feito com sucesso: " + pontuacaoA);
+
+            return pontuacaoA;
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return 0;
         }
     }
 
