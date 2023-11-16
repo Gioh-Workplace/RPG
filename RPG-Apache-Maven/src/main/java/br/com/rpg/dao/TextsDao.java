@@ -118,6 +118,7 @@ public class TextsDao {
             System.out.println("Erro ao conectar ao banco");
         }
 
+        return false;
     }
 }
 
