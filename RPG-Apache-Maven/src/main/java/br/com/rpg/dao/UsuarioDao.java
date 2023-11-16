@@ -12,25 +12,35 @@ public class UsuarioDao {
 
 
     public void createTable() {
-        String SQL = "CREATE TABLE IF NOT EXISTS USUARIO (ID INT AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL, SENHA VARCHAR(255) NOT NULL, PONTUACAO INT NULL)";
+        String createTableSQL = "CREATE TABLE IF NOT EXISTS USUARIO (ID INT AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL, SENHA VARCHAR(255) NOT NULL, PONTUACAO INT NULL)";
+        String insertAdminSQL = "INSERT INTO USUARIO (USERNAME, EMAIL, SENHA) SELECT ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM USUARIO WHERE USERNAME = ?)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
 
 
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            PreparedStatement createTableStatement = connection.prepareStatement(createTableSQL);
+            createTableStatement.execute();
 
-            preparedStatement.execute();
+            PreparedStatement insertAdminStatement = connection.prepareStatement(insertAdminSQL);
+            insertAdminStatement.setString(1, "admin");
+            insertAdminStatement.setString(2, "admin@gmail.com");
+            insertAdminStatement.setString(3, "admin123");
+            insertAdminStatement.setString(4, "admin");
 
-            System.out.println("tabela criada com sucesso");
+            insertAdminStatement.execute();
+
+            System.out.println("Tabela criada e dados do admin inseridos com sucesso");
+
 
             connection.close();
 
-
         } catch (Exception e) {
-            System.out.println("Tabela nao criada ou erro na conexao");
+            System.out.println("Tabela não criada ou erro na conexão");
+            e.printStackTrace();
         }
     }
+
 
     public void createUser(Usuario user) {
 
