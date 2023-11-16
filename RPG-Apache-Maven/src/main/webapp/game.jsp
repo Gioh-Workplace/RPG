@@ -18,7 +18,7 @@
 
 <c:if test="${sessionScope.loggedUser != null}">
     <div class="menu">
-        <a href="#">Ranking</a>
+        <a href="/ranking-list">Ranking</a>
         <a href="creditos.jsp">Creditos</a>
         <a href="index.jsp">
             <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
