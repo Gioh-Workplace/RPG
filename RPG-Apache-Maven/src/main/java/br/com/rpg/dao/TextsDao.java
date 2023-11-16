@@ -2,19 +2,16 @@ package br.com.rpg.dao;
 
 import br.com.rpg.config.ConnectionPoolConfig;
 import br.com.rpg.model.Texts;
-import org.w3c.dom.Text;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 
 public class TextsDao {
     public void createTable() {
-        String SQL = "CREATE TABLE IF NOT EXISTS Textos (ID INT AUTO_INCREMENT PRIMARY KEY,Nome VARCHAR(255) NOT NULL, Texto VARCHAR(255) NOT NULL)";
+        String SQL = "CREATE TABLE IF NOT EXISTS Textos (ID INT AUTO_INCREMENT PRIMARY KEY, Texto VARCHAR(255) NOT NULL)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -37,27 +34,30 @@ public class TextsDao {
 
     public void createTexts(Texts texts) {
 
-        String SQL = "INSERT INTO Textos (Nome, Texto) VALUES (?, ?)";
+        String SQL = "INSERT INTO Textos (Texto) VALUES (?)";
+        int vef = isEmpty();
+        if (vef == -1) {
+            try {
 
-        try {
-
-            Connection connection = ConnectionPoolConfig.getConnection();
+                Connection connection = ConnectionPoolConfig.getConnection();
 
 
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1, texts.getNome());
-            preparedStatement.setString(2, texts.getTexto());
+                PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            preparedStatement.execute();
+                preparedStatement.setString(1, texts.getTexto());
 
-            System.out.println("Insert feito com sucesso");
+                preparedStatement.execute();
 
-            connection.close();
+                System.out.println("Insert feito com sucesso");
 
-        } catch (Exception e) {
-            System.out.println("Erro na conexao");
-        }
+                connection.close();
 
+            } catch (Exception e) {
+                System.out.println("Erro na conexao");
+            }
+
+        } else{
+            System.out.println("Tabela já preenchida");}
     }
 
     public Texts[] getTexts() {
@@ -65,7 +65,7 @@ public class TextsDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             System.out.println("success in database connection");
 
@@ -76,9 +76,8 @@ public class TextsDao {
             Texts[] texts = new Texts[300];
             while (resultSet.next()) {
                 int i = 0;
-                String textName = resultSet.getString("nome");
                 String text = resultSet.getString("texto");
-                Texts t = new Texts(text, textName);
+                Texts t = new Texts(text);
                 texts[i] = t;
                 i++;
             }
@@ -96,12 +95,12 @@ public class TextsDao {
 
     }
 
-    public boolean isEmpty() {
-        String SQL = "SELECT count (*)  FROM TEXTOS";
+    public int isEmpty() {
+        String SQL = "SELECT * FROM TEXTOS";
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             System.out.println("success in database connection");
 
@@ -111,14 +110,17 @@ public class TextsDao {
 
             System.out.println("success in counting");
 
+            //connection.close();
+            int id =  resultSet.getInt(1);
             connection.close();
-            int a = (int) resultSet.getLong(1);
-            return(a>=10);
+            return id;
         } catch (Exception e){
             System.out.println("Erro ao conectar ao banco");
+            System.out.println(e);
+            return -1;
         }
 
-        return false;
+
     }
 }
 

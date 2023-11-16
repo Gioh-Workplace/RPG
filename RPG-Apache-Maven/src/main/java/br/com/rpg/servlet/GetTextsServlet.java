@@ -11,8 +11,6 @@ import java.util.List;
 
 @WebServlet("/getTexts")
 public class GetTextsServlet extends HttpServlet{
-    // Exemplo de servlet que instancia a classe e define um atributo de solicitação
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
