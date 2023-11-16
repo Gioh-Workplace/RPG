@@ -33,7 +33,12 @@ public class LoginServlet extends HttpServlet {
 
         boolean isValido = new UsuarioDao().verificarCredencial(usuario);
 
-        if (isValido) {
+        if(isValido && username.equals("admin") && email.equals("admin@gmail.com")) {
+            req.getSession().setAttribute("loggedAdmin", username);
+            resp.sendRedirect("/admin.jsp");
+        }
+
+        else if (isValido && !username.equals("admin") && !email.equals("admin@gmail.com")) {
 
             req.getSession().setAttribute("loggedUser", username);
             req.getSession().setAttribute("emailUsuario", email);
