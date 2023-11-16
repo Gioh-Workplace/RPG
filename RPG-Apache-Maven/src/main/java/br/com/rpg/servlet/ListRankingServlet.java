@@ -18,9 +18,12 @@ public class ListRankingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        List<Usuario> rankingTop = new RankingDAO().listRankingTop10();
+        int pontuacaoA = new RankingDAO().getPontuacaoA();
+
+        List<Usuario> rankingTop = new RankingDAO().listRankingTop(pontuacaoA);
 
         HttpSession session = req.getSession();
+        session.setAttribute("top", pontuacaoA);
         session.setAttribute("rankingTop", rankingTop);
 
         req.getRequestDispatcher("ranking.jsp").forward(req, resp);
