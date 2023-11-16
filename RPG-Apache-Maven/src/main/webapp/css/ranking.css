@@ -1,0 +1,32 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 55px;
+}
+
+table {
+    border-radius: 10px;
+    color: white;
+    border: 5px solid white;
+    margin: 0 auto;
+    width: 50%;
+    font-size: 50px;
+}
+
+tr:hover {
+    background-color: white;
+    color: black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid white;
+
+}
