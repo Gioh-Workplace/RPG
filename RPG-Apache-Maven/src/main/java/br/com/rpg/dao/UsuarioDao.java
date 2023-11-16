@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class UsuarioDao {
 
@@ -67,6 +70,42 @@ public class UsuarioDao {
 
     }
 
+    public List<Usuario> listUsers() {
+        String SQL = "SELECT * FROM USUARIO WHERE USERNAME <> (?)";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, "admin");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Usuario> usuarios = new ArrayList<>();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String username = resultSet.getString("username");
+                String email = resultSet.getString("email");
+
+                usuarios.add(new Usuario(id, username, email));
+
+
+            }
+
+            System.out.println("Sucesso em selecionar e colocar na lista");
+
+            return usuarios;
+
+
+        } catch(Exception e) {
+            System.out.println("Erro em selecionar");
+            return Collections.emptyList();
+        }
+
+
+    }
+
     public void updateUser(Usuario usuario, String newUsername, String fieldToUpdate) {
         String SQL = "UPDATE USUARIO SET " + fieldToUpdate.toUpperCase() + " = ? WHERE USERNAME = ?";
 
@@ -85,7 +124,7 @@ public class UsuarioDao {
 
 
         } catch (Exception e) {
-
+            System.out.println("erro no update");
         }
     }
 
