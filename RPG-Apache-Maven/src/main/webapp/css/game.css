@@ -55,12 +55,12 @@ body {
     margin-top: 70px;
     width: 950px;
     height: 660px;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     background-image: url("../img/sala_Cobra.jpg"); /
     background-size: cover;
-
+    z-index: -2;
 }
 
 #square {
@@ -82,4 +82,8 @@ body {
 
 #speech {
     font-style: italic;
+}
+.teste{
+    position: relative;
+    z-index: 10;
 }

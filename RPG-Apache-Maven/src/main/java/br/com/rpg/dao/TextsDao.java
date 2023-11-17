@@ -7,6 +7,8 @@ import java.sql.Connection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TextsDao {
@@ -32,11 +34,11 @@ public class TextsDao {
         }
     }
 
-    public void createTexts(Texts texts) {
+    public void createTexts(Texts texts, int length) {
 
         String SQL = "INSERT INTO Textos (Texto) VALUES (?)";
         int vef = isEmpty();
-        if (vef == -1) {
+        if (vef == -1|| vef<length) {
             try {
 
                 Connection connection = ConnectionPoolConfig.getConnection();
@@ -60,7 +62,7 @@ public class TextsDao {
             System.out.println("Tabela já preenchida");}
     }
 
-    public Texts[] getTexts() {
+    public List<Texts> getTexts() {
         String SQL = "SELECT * FROM TEXTOS";
 
         try {
@@ -72,14 +74,14 @@ public class TextsDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             ResultSet resultSet = preparedStatement.executeQuery();
-            //List<Texts> texts = new ArrayList<>();
-            Texts[] texts = new Texts[300];
+            List<Texts> texts = new ArrayList<>();
+            //Texts[] texts = new Texts[300];
             while (resultSet.next()) {
-                int i = 0;
+                int id = resultSet.getInt("ID");
                 String text = resultSet.getString("texto");
-                Texts t = new Texts(text);
-                texts[i] = t;
-                i++;
+                Texts t = new Texts(text,id);
+                texts.add(t);
+
             }
             System.out.println("success in select * texts");
 
@@ -96,7 +98,7 @@ public class TextsDao {
     }
 
     public int isEmpty() {
-        String SQL = "SELECT * FROM TEXTOS";
+        String SQL = "SELECT COUNT (*) as counter FROM TEXTOS";
 
         try {
 
@@ -111,9 +113,10 @@ public class TextsDao {
             System.out.println("success in counting");
 
             //connection.close();
-            int id =  resultSet.getInt(1);
+            resultSet.next();
+            int count =    resultSet.getInt("counter");
             connection.close();
-            return id;
+            return count;
         } catch (Exception e){
             System.out.println("Erro ao conectar ao banco");
             System.out.println(e);

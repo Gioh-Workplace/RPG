@@ -48,6 +48,19 @@
     </div>
 </c:if>
 
+<c:forEach var="texto" items="${TextList}">
+    <c:choose>
+        <c:when test="${texto.id ==1}">
+            <p>${texto.texto}</p>
+            <button onclick="${texto.setId(2)}">Next</button>
+        </c:when>
+        <c:when test="${texto.id ==2}">
+            <p>${texto.texto}</p>
+
+        </c:when>
+    </c:choose>
+</c:forEach>
+
 <div id="board">
     <div id="background"></div>
     <div id="square">
@@ -67,7 +80,6 @@
     var texts = [];
     var index = 0; // Guarda o índice do texto atual
     //var timer = setInterval(changeText, 3000); // Muda o texto a cada 3 segundos
-
     if(speech.innerText==="Loading"){
         changeText(0);
     }
@@ -82,10 +94,10 @@
         speech.innerHTML = texts[index]; // Altera o texto da fala com o texto do array no índice atual
     }
     function fillArray(){
-        <c:forEach var="text" items="${textos}">
-        texts[index] = ${textos.getTexto()}
+
+        texts[index] = ${text}
             index++;
-        </c:forEach>
+
         index = 0;
     }
 
