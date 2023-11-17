@@ -17,9 +17,11 @@ public class CreateTextsServlet extends HttpServlet {
         String[] hold = getFullArray();
         TextsDao textsDao = new TextsDao();
         textsDao.createTable();
+        System.out.println(hold.length);
         for(int i=0;i<hold.length;i++) {
-            Texts texts = new Texts(hold[i]);
-            textsDao.createTexts(texts);
+            Texts a = new Texts(hold[i]);
+            textsDao.createTexts(a,hold.length);
+
         }
         //req.getRequestDispatcher("game.jsp").forward(req, resp);
         resp.sendRedirect("/getTexts");

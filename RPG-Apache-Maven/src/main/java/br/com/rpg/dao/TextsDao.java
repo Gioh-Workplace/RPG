@@ -32,11 +32,11 @@ public class TextsDao {
         }
     }
 
-    public void createTexts(Texts texts) {
+    public void createTexts(Texts texts, int length) {
 
         String SQL = "INSERT INTO Textos (Texto) VALUES (?)";
         int vef = isEmpty();
-        if (vef == -1) {
+        if (vef == -1|| vef<length) {
             try {
 
                 Connection connection = ConnectionPoolConfig.getConnection();
@@ -96,7 +96,7 @@ public class TextsDao {
     }
 
     public int isEmpty() {
-        String SQL = "SELECT * FROM TEXTOS";
+        String SQL = "SELECT COUNT (*) as counter FROM TEXTOS";
 
         try {
 
@@ -111,9 +111,10 @@ public class TextsDao {
             System.out.println("success in counting");
 
             //connection.close();
-            int id =  resultSet.getInt(1);
+            resultSet.next();
+            int count =    resultSet.getInt("counter");
             connection.close();
-            return id;
+            return count;
         } catch (Exception e){
             System.out.println("Erro ao conectar ao banco");
             System.out.println(e);
