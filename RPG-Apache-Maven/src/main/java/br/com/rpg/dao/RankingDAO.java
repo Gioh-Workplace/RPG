@@ -41,6 +41,8 @@ public class RankingDAO
 
             System.out.println("Select feito com sucesso ranking");
 
+            connection.close();
+
             return usuarios;
 
         } catch (Exception e) {
@@ -49,7 +51,45 @@ public class RankingDAO
         }
     }
 
-    public int getPontuacaoA() {
+    public List<Usuario> listRankingTop() {
+
+        String SQL = "SELECT * FROM USUARIO WHERE ID > 1 ORDER BY PONTUACAO DESC";
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Usuario> usuarios = new ArrayList<>();
+
+            while (resultSet.next()) {
+
+                int id = resultSet.getInt("id");
+                String username = resultSet.getString("username");
+                String email = resultSet.getString("email");
+                String senha = resultSet.getString("senha");
+                int pontuacao = resultSet.getInt("pontuacao");
+
+                Usuario usuario = new Usuario(id, username, email, senha, pontuacao);
+                usuarios.add(usuario);
+            }
+
+            System.out.println("Select feito com sucesso ranking Todos");
+
+            connection.close();
+
+            return usuarios;
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public int getPontuacaoA()
+    {
 
         String SQL = "SELECT PONTUACAO FROM USUARIO WHERE ID = 1";
 
@@ -74,6 +114,49 @@ public class RankingDAO
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             return 0;
+        }
+    }
+
+    public void setPontuacaoA(int pontuacaoA)
+    {
+
+        String SQL = "UPDATE USUARIO SET PONTUACAO = ? WHERE ID = 1";
+
+        try
+        {
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setInt(1, pontuacaoA);
+            preparedStatement.executeUpdate();
+
+            System.out.println("Update feito com sucesso: " + pontuacaoA);
+
+            connection.close();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public void updateRankingNull(String id)
+    {
+        String SQL = "UPDATE USUARIO SET PONTUACAO = NULL WHERE ID = ?;";
+
+        try
+        {
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, id);
+            preparedStatement.executeUpdate();
+
+            System.out.println("Update feito com sucesso: " + id);
+
+            connection.close();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
