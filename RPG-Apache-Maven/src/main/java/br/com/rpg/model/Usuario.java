@@ -20,6 +20,12 @@ public class Usuario {
         this.pontuacao = pontuacao;
     }
 
+    public Usuario(int id, String username, String email) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+    }
+
     public Usuario(String username, String email, String senha) {
         this.username = username;
         this.email = email;
