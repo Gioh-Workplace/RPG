@@ -51,57 +51,38 @@
 <c:forEach var="texto" items="${TextList}">
     <c:choose>
         <c:when test="${texto.id ==1}">
-            <p>${texto.texto}</p>
-            <button onclick="${texto.setId(2)}">Next</button>
+            <p style="color: white">${texto.texto}</p>
+            <form action="/first-room" method="post">
+            <button>1 - Lutar</button>
+                <input type="hidden" name="button1" value="atacar">
+            </form>
+            <form action="/first-room" method="post">
+            <button>2 - Fugir</button>
+                <input type="hidden" name="button1" value="fugir">
+            </form>
+            <button>3 - Buscar na mochila</button>
         </c:when>
-        <c:when test="${texto.id ==2}">
-            <p>${texto.texto}</p>
+            <c:when test="${texto.id == 2 or texto.id == 3 or texto.id == 4}">
+                <c:if test="${requestScope.opcao eq 'atacando'}">
+                <p style="color: white">${texto.texto}</p>
+            </c:if>
+            </c:when>
+
+        <c:when test="${texto.id == 5 or texto.id == 6 or texto.id == 7}">
+            <c:if test="${(requestScope.sobrevive == 1) and (texto.id == 5 or texto.id == 6)}">
+                <p style="color: white">${texto.texto}</p>
+            </c:if>
+
+            <c:if test="${(requestScope.sobrevive == 2) and (texto.id == 7)}">
+                <p style="color: white">${texto.texto}</p>
+            </c:if>
 
         </c:when>
+
     </c:choose>
 </c:forEach>
 
-<div id="board">
-    <div id="background"></div>
-    <div id="square">
-        <span id="narrator">Narrador:</span>
-        <span id="speech">Loading</span>
-        <button class="botao1" onclick="changeText(3)">Aperte-me</button>
-        <button class="botao2" onclick="changeText(1)">Aperte-me</button>
-        <button class="botao3" onclick="changeText(2)">Aperte-me</button>
-        <button class="botao4" onclick="changeText(3)">Aperte-me</button>
-    </div>
-</div>
 
-<script>
-    // Código JavaScript para o jogo
-    var narrator = document.getElementById("narrator"); // Contém o texto do narrador
-    var speech = document.getElementById("speech"); // Contém o texto da fala
-    var texts = [];
-    var index = 0; // Guarda o índice do texto atual
-    //var timer = setInterval(changeText, 3000); // Muda o texto a cada 3 segundos
-    if(speech.innerText==="Loading"){
-        changeText(0);
-    }
-    function changeText(num) {
-        // Muda o texto do narrador e da fala
-        index = num;
-        //index++; // Incrementa o índice
-        if (index >= texts.length) {
-            // Se o índice for maior ou igual ao tamanho do array, volta para o início
-            index = 0;
-        }
-        speech.innerHTML = texts[index]; // Altera o texto da fala com o texto do array no índice atual
-    }
-    function fillArray(){
-
-        texts[index] = ${text}
-            index++;
-
-        index = 0;
-    }
-
-</script>
 
 </body>
 
