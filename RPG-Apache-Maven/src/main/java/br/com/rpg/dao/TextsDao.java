@@ -7,6 +7,8 @@ import java.sql.Connection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TextsDao {
@@ -60,7 +62,7 @@ public class TextsDao {
             System.out.println("Tabela já preenchida");}
     }
 
-    public Texts[] getTexts() {
+    public List<Texts> getTexts() {
         String SQL = "SELECT * FROM TEXTOS";
 
         try {
@@ -72,14 +74,14 @@ public class TextsDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             ResultSet resultSet = preparedStatement.executeQuery();
-            //List<Texts> texts = new ArrayList<>();
-            Texts[] texts = new Texts[300];
+            List<Texts> texts = new ArrayList<>();
+            //Texts[] texts = new Texts[300];
             while (resultSet.next()) {
-                int i = 0;
+                int id = resultSet.getInt("ID");
                 String text = resultSet.getString("texto");
-                Texts t = new Texts(text);
-                texts[i] = t;
-                i++;
+                Texts t = new Texts(text,id);
+                texts.add(t);
+
             }
             System.out.println("success in select * texts");
 
