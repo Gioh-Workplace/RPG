@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
     <meta charset="UTF-8">
@@ -23,8 +24,14 @@
                 <a href="perfil.jsp">Meu Perfil</a>
                 <a href="/logout">Sair</a>
             </div>
+
         </div>
+
+
     </div>
+    <h1>
+
+    </h1>
 </c:if>
 
 <c:if test="${sessionScope.loggedUser == null}">
@@ -38,11 +45,26 @@
         <a href="sobre.jsp">Sobre</a>
         <a href="login.jsp">Login</a>
     </div>
-</c:if>
+    <h1>
 
-<div class="title">Sobre</div>
-<div class="text-block">
-    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <p> when an unknown printer took a galley of type and scrambled it to make a type specimen book. <p> It has survived not only five centuries, <p> but also the leap into electronic typesetting, remaining essentially.</p>
-</div>
+    </h1>
+</c:if>
+<script>
+    let h1_tag = document.querySelector('h1')
+    let text = 'O despertar de Seth e um intrigante RPG de escolhas, um universo onde cada decisao molda o destino do personagem de maneiras imprevisiveis. Neste labirinto misterioso, Seth se encontra diante de encruzilhadas desconcertantes, onde as escolhas nao sao apenas decisoes, mas caminhos que levam a destinos inexplorados.';
+
+
+    text.split('').forEach((l, index) => {
+        setTimeout(() => {
+            h1_tag.innerHTML += l
+        }, 80 * index)
+    })
+
+
+
+
+
+</script>
+
 </body>
 </html>
