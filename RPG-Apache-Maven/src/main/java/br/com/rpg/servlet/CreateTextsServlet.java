@@ -23,8 +23,8 @@ public class CreateTextsServlet extends HttpServlet {
             textsDao.createTexts(a,hold.length);
 
         }
-        //req.getRequestDispatcher("game.jsp").forward(req, resp);
         resp.sendRedirect("/getTexts");
+
     }
 
     protected String[] getFullArray() {
@@ -32,9 +32,9 @@ public class CreateTextsServlet extends HttpServlet {
         hold[0] = "Você entra em uma sala escura... À sua frente é possível ouvir um 'SSSSSsssss' com um breve som de chocalhos. Logo você reconhece que se trata de uma cobra";
         hold[1] = "Você tenta lutar contra a cobra com suas mãos nuas, a falta de informação sobre o animal te leva a fazer movimentos imprudentes e você é mordido e envenenado.";
         hold[2] = "Aos poucos o veneno começa a fazer efeito e você sente suas forças se esvaindo, você então pode sentir o abraço da morte.";
-        hold[3] = "\\n<Você morreu! Fim de jogo!>\\n";
+        hold[3] = "Você morreu! Fim de jogo!";
         hold[4] = "Com medo do que o animal seja peçonhento ou mortal, você decide sair da sala, evitando ao máximo chamar a atenção da cobra.";
-        hold[5] = "\n<Você consegue escapar da sala.>\n";
+        hold[5] = "Você consegue escapar da sala.";
         hold[6] = "Você não consegue ser silencioso o bastante e chama a atenção da cobra.\nSurpreso e em choque ao ver ela se movendo em sua direção, você não consegue reagir rápido o suficiente e é mordido e envenenado até a morte."; // FIM DE JOGO
         hold[7] = "Abrindo sua mochila e vasculhando por possíveis materiais, você encontra uma faca pequena.";
         hold[8] = "\n<Você equipou a faca>\n";
