@@ -35,7 +35,7 @@
 
 <c:if test="${sessionScope.loggedUser == null}">
     <div class="menu">
-        <a href="#">Ranking</a>
+        <a href="ranking.jsp">Ranking</a>
         <a href="creditos.jsp">Creditos</a>
         <a href="index.jsp">
             <img src="img/logo.jpg" class="logo" alt="logo" id="logo1">
@@ -55,7 +55,12 @@
         <div class="text">
             <p>Giovani</p>
             <span class="paragraph">
-        Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Suspendisse eget lacus<br> non neque fringilla convallis.<br> Donec quam justo, mollis et nulla sed, iaculis imperdiet ipsum. Nunc sed fermentum sem, vel pretium ex. Nullam scelerisque mauris eget nibh euismod vehicula. Proin mi nunc, cursus sed metus sed, elementum consectetur massa. Praesent lorem urna, gravida a accumsan ac, lobortis ac est. Integer magna ipsum, elementum non tincidunt eget, pellentesque ac nisi. Nulla ornare ullamcorper ipsum at egestas.
+        Sou um dev amador com diversas
+        </span>
+            <span class="paragraph">ideias de projetos, e decidi
+
+        </span>
+            <span class="paragraph"> tentar colocar eles em pratica.
 
         </span>
             <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/Gioh-Workplace">Github</a></p>
@@ -70,9 +75,17 @@
         <div class="text">
             <p>Gabriel</p>
             <span class="paragraph">
-        Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Suspendisse eget lacus<br> non neque fringilla convallis.<br> Donec quam justo, mollis et nulla sed, iaculis imperdiet ipsum. Nunc sed fermentum sem, vel pretium ex. Nullam scelerisque mauris eget nibh euismod vehicula. Proin mi nunc, cursus sed metus sed, elementum consectetur massa. Praesent lorem urna, gravida a accumsan ac, lobortis ac est. Integer magna ipsum, elementum non tincidunt eget, pellentesque ac nisi. Nulla ornare ullamcorper ipsum at egestas.
+                Atualmente, estou cursando
 
             </span>
+            <span class="paragraph"> Analise e Desenvolvimento de
+
+        </span>
+
+            <span class="paragraph"> Sistemas na faculdade
+
+        </span>
+
             <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/bielxrd">Github</a></p>
         </div>
 
@@ -85,10 +98,9 @@
         <div class="text">
             <p>Caua</p>
             <span class="paragraph">
-                        Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Suspendisse eget lacus<br> non neque fringilla convallis.<br> Donec quam justo, mollis et nulla sed, iaculis imperdiet ipsum. Nunc sed fermentum sem, vel pretium ex. Nullam scelerisque mauris eget nibh euismod vehicula. Proin mi nunc, cursus sed metus sed, elementum consectetur massa. Praesent lorem urna, gravida a accumsan ac, lobortis ac est. Integer magna ipsum, elementum non tincidunt eget, pellentesque ac nisi. Nulla ornare ullamcorper ipsum at egestas.
-
+                      Hello, my name is Cauã
             </span>
-            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/Gioh-Workplace">Github</a></p>
+            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/Cry199">Github</a></p>
         </div>
 
 
@@ -100,9 +112,12 @@
         <div class="text">
             <p>Agatha</p>
             <span class="paragraph">
-        Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.<br> Suspendisse eget lacus<br> non neque fringilla convallis.<br> Donec quam justo, mollis et nulla sed, iaculis imperdiet ipsum. Nunc sed fermentum sem, vel pretium ex. Nullam scelerisque mauris eget nibh euismod vehicula. Proin mi nunc, cursus sed metus sed, elementum consectetur massa. Praesent lorem urna, gravida a accumsan ac, lobortis ac est. Integer magna ipsum, elementum non tincidunt eget, pellentesque ac nisi. Nulla ornare ullamcorper ipsum at egestas.
+        Hello, my name is Agatha, dev
             </span>
-            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon">  <a href="https://github.com/Gioh-Workplace">Github</a></p>
+            <span class="paragraph">
+          iniciante e escritora
+            </span>
+            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon">  <a href="https://github.com/AgathaMercedes">Github</a></p>
         </div>
 
 
