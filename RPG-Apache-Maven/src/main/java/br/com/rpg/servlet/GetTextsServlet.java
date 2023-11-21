@@ -16,7 +16,7 @@ public class GetTextsServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Texts> textos = new TextsDao().getTexts();
         //Texts[] textos = new TextsDao().getTexts();
-        System.out.println(textos.get(0).getTexto());
+       // System.out.println(textos.get(0).getTexto());
         req.getSession().setAttribute("TextList",textos);
         System.out.println("TextList criada");
         req.getRequestDispatcher("game.jsp").forward(req,resp);
