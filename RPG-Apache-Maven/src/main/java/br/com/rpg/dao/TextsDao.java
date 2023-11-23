@@ -15,7 +15,7 @@ import java.util.List;
 public class TextsDao {
     public void createTable()
     {
-        String SQL = "CREATE TABLE IF NOT EXISTS Textos (ID INT AUTO_INCREMENT PRIMARY KEY, Texto VARCHAR(550) NOT NULL,op1 VARCHAR(255), ref1 INT ,op2 VARCHAR(255), ref2 INT ,op3 VARCHAR(255), ref3 INT, image VARCHAR(255) null  )";
+        String SQL = "CREATE TABLE IF NOT EXISTS Textos (ID INT AUTO_INCREMENT PRIMARY KEY, Texto VARCHAR(550) NOT NULL,op1 VARCHAR(255), ref1 INT ,op2 VARCHAR(255), ref2 INT ,op3 VARCHAR(255), ref3 INT, image VARCHAR(255) null, espada INT null, granada INT null, pocao INT null, armadura INT null, espadaDano INT null, granadaDano INT null, pocaoPts INT null, armaduraPts INT null)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -34,7 +34,7 @@ public class TextsDao {
 
     public void createTexts(Texts texts)
     {
-        String SQL = "INSERT INTO TEXTOS (Texto, op1, ref1, op2, ref2, op3, ref3, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO TEXTOS (Texto, op1, ref1, op2, ref2, op3, ref3, image, espada, granada, pocao, armadura, espadaDano, granadaDano, pocaoPts, armaduraPts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try
         {
@@ -49,6 +49,14 @@ public class TextsDao {
             preparedStatement.setString(6, texts.getOP3());
             preparedStatement.setInt(7, texts.getREF3());
             preparedStatement.setString(8, texts.getImgem());
+            preparedStatement.setInt(9, texts.getEspada());
+            preparedStatement.setInt(10, texts.getGranada());
+            preparedStatement.setInt(11, texts.getPocao());
+            preparedStatement.setInt(12, texts.getArmadura());
+            preparedStatement.setInt(13, 3);
+            preparedStatement.setInt(14, 6);
+            preparedStatement.setInt(15, 10);
+            preparedStatement.setInt(16, 4);
             preparedStatement.execute();
 
             System.out.println("Insert feito com sucesso");
@@ -87,12 +95,20 @@ public class TextsDao {
                 String op3 = resultSet.getString("op3");
                 int ref3 = resultSet.getInt("ref3");
                 String imagem = resultSet.getString("image");
+                int espada = resultSet.getInt("espada");
+                int granada = resultSet.getInt("granada");
+                int pocao = resultSet.getInt("pocao");
+                int armadura = resultSet.getInt("armadura");
+                int espadaDano = resultSet.getInt("espadaDano");
+                int granadaDano = resultSet.getInt("granadaDano");
+                int pocaoPts = resultSet.getInt("pocaoPts");
+                int armaduraPts = resultSet.getInt("armaduraPts");
 
                 System.out.println("id: " + id);
                 System.out.println("texto: " + text);
                 System.out.println("op1: " + op1);
 
-                texts.add(new Texts(id,text,op1,ref1,op2,ref2,op3,ref3,imagem));
+                texts.add(new Texts(id,text,op1,ref1,op2,ref2,op3,ref3,imagem, espada, granada, pocao, armadura, espadaDano, granadaDano, pocaoPts, armaduraPts));
             }
 
             System.out.println("success in select for id: " + id);
@@ -134,8 +150,15 @@ public class TextsDao {
                 String op3 = resultSet.getString("op3");
                 int ref3 = resultSet.getInt("ref3");
                 String imagem = resultSet.getString("image");
-
-                texts.add(new Texts(id,texto,op1,ref1,op2,ref2,op3,ref3,imagem));
+                int espada = resultSet.getInt("espada");
+                int granada = resultSet.getInt("granada");
+                int pocao = resultSet.getInt("pocao");
+                int armadura = resultSet.getInt("armadura");
+                int espadaDano = resultSet.getInt("espadaDano");
+                int granadaDano = resultSet.getInt("granadaDano");
+                int pocaoPts = resultSet.getInt("pocaoPts");
+                int armaduraPts = resultSet.getInt("armaduraPts");
+                texts.add(new Texts(id,texto,op1,ref1,op2,ref2,op3,ref3,imagem, espada, granada, pocao, armadura, espadaDano, granadaDano, pocaoPts, armaduraPts));
             }
 
             System.out.println("success in select * texts");
@@ -153,7 +176,7 @@ public class TextsDao {
 
     public void updateText(Texts texts, int id)
     {
-        String SQL = "UPDATE TEXTOS SET Texto = ?, op1 = ?, ref1 = ?, op2 = ?, ref2 = ?, op3 = ?, ref3 = ?, image = ? WHERE ID = ?";
+        String SQL = "UPDATE TEXTOS SET Texto = ?, op1 = ?, ref1 = ?, op2 = ?, ref2 = ?, op3 = ?, ref3 = ?, image = ?, espada = ?, granada = ?, pocao = ?, armadura = ?, espadaDano = ?, granadaDano = ?, pocaoPts = ?, armaduraPts = ? WHERE ID = ?";
 
         try
         {
@@ -168,7 +191,15 @@ public class TextsDao {
             preparedStatement.setString(6, texts.getOP3());
             preparedStatement.setInt(7, texts.getREF3());
             preparedStatement.setString(8, texts.getImgem());
-            preparedStatement.setInt(9, id);
+            preparedStatement.setInt(9, texts.getEspada());
+            preparedStatement.setInt(10, texts.getGranada());
+            preparedStatement.setInt(11, texts.getPocao());
+            preparedStatement.setInt(12, texts.getArmadura());
+            preparedStatement.setInt(13, texts.getEspadaDano());
+            preparedStatement.setInt(14, texts.getGranadaDano());
+            preparedStatement.setInt(15, texts.getPocaoPts());
+            preparedStatement.setInt(16, texts.getArmaduraPts());
+            preparedStatement.setInt(17, id);
             preparedStatement.execute();
 
             System.out.println("Update feito com sucesso");
