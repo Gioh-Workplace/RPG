@@ -85,7 +85,7 @@
     <div class="table-responsive hide" id="podium">
         <form action="/update-ranking" method="post">
             <label for="rankingNew">Escolha o Podio (entre 1 e 100):</label>
-            <input type="number" id="rankingNew" name="rankingNew" min="1" max="100">
+            <input type="number" id="rankingNew" name="rankingNew" min="1" max="99">
             <input type="submit">
         </form>
     </div>
@@ -114,14 +114,14 @@
     <div class="table-responsive hide" id="game">
         <table>
             <tr>
-                <th> ID: </th>
-                <th> Texto: </th>
-                <th> OP1: </th>
-                <th> REF1: </th>
-                <th> OP2: </th>
-                <th> REF2: </th>
-                <th> OP3: </th>
-                <th> REF3: </th>
+                <th> ID:</th>
+                <th> Texto:</th>
+                <th> OP1:</th>
+                <th> REF1:</th>
+                <th> OP2:</th>
+                <th> REF2:</th>
+                <th> OP3:</th>
+                <th> REF3:</th>
                 <th>Espada</th>
                 <th>Granada</th>
                 <th>Pocao</th>
