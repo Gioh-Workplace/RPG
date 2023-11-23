@@ -99,7 +99,7 @@
         <div style="color:white" class="text">
             <p style="color:white">Caua</p>
             <span class="paragraph">
-                      Hello, my name is Cauã
+                      Hello, my name is Caua
             </span>
             <button class="custom-btn btn-8"><a href="https://github.com/Cry199" style="color:white">GitHub</a></button>
 

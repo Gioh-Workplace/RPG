@@ -27,30 +27,32 @@
         </div>
     </div>
 </c:if>
-<h2>${sessionScope.loggedUser} Profile </h2>
+
+<h2>  Seja bem vindo(a), ${sessionScope.loggedUser}
+</h2>
 
 <div class="form-container">
-        <h4>Username</h4>
-        <h6>${requestScope.erroUpdate}</h6>
-        <form action="/update" id="username-update" method="post">
+    <h4>Username</h4>
+    <h6>${requestScope.erroUpdate}</h6>
+    <form action="/update" id="username-update" method="post">
         <input type="text" name="username" id="username" value="${sessionScope.loggedUser}" required>
-            <input type="hidden" name="fieldToUpdate" value="username">
-            <button> Alterar </button>
-        </form>
+        <input type="hidden" name="fieldToUpdate" value="username">
+        <button> Alterar </button>
+    </form>
 
-        <h4>Email</h4>
-        <form action="/update" id="email-update" method="post">
+    <h4>Email</h4>
+    <form action="/update" id="email-update" method="post">
         <input type="email" name="emailUser" id="emailUser" value="${sessionScope.emailUsuario}" required>
-            <input type="hidden" name="fieldToUpdate" value="email">
-            <button> Alterar </button>
-        </form>
+        <input type="hidden" name="fieldToUpdate" value="email">
+        <button> Alterar </button>
+    </form>
 
-        <h4>Senha</h4>
-        <form action="/update" id="password-update" method="post">
+    <h4>Senha</h4>
+    <form action="/update" id="password-update" method="post">
         <input type="password" name="senhaUser" id="senhaUser" value="${sessionScope.senhaUsuario}" required>
-            <input type="hidden" name="fieldToUpdate" value="senha">
-            <button> Alterar </button>
-        </form>
+        <input type="hidden" name="fieldToUpdate" value="senha">
+        <button> Alterar </button>
+    </form>
 
     <form action="/delete" id="delete-button" method="post">
         <h4>Deletar conta: </h4>
