@@ -123,6 +123,14 @@
                 <th> OP3: </th>
                 <th> REF3: </th>
                 <th> Imagem: </th>
+                <th>Espada</th>
+                <th>Granada</th>
+                <th>Pocao</th>
+                <th>Armadura</th>
+                <th>EspadaDano</th>
+                <th>GranadaDano</th>
+                <th>PocaoPts</th>
+                <th>ArmaduraPts</th>
                 <th> Alterar: </th>
                 <th> Delete: </th>
             </tr>
@@ -137,6 +145,10 @@
                     <td>${game.OP3}</td>
                     <td>${game.REF3}</td>
                     <td>${game.imgem}</td>
+                    <td>${game.espada}</td>
+                    <td>${game.granada}</td>
+                    <td>${game.pocao}</td>
+                    <td>${game.armadura}</td>
                     <td>
                         <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
                     </td>
@@ -163,7 +175,14 @@
             <input type="text" name="OP3" id="OP31" value="${gameUpdate.OP3}"  required>
             <input type="text" name="REF3" id="REF31" value="${gameUpdate.REF3}" required>
             <input type="text" name="imgem" id="imgem1" value="${gameUpdate.imgem}" required>
-
+            <input type="text" name="espada" id="espada" value="${gameUpdate.espada}" required>
+            <input type="text" name="granada" id="granada" value="${gameUpdate.granada}" required>
+            <input type="text" name="pocao" id="pocao" value="${gameUpdate.pocao}" required>
+            <input type="text" name="armadura" id="armadura" value="${gameUpdate.armadura}" required>
+            <input type="text" name="espadaDano" id="espadaDano" value="${gameUpdate.espadaDano}" required>
+            <input type="text" name="granadaDano" id="granadaDano" value="${gameUpdate.granadaDano}" required>
+            <input type="text" name="pocaoPts" id="pocaoPts" value="${gameUpdate.pocaoPts}" required>
+            <input type="text" name="armaduraPts" id="armaduraPts" value="${gameUpdate.armaduraPts}" required>
             <button type="submit">Alterar</button>
         </form>
     </c:forEach>

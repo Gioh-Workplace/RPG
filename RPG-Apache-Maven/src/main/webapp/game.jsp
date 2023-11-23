@@ -35,7 +35,7 @@
 
         <div class="Textos">
             <h1>${Jogo.texto}</h1>
-            <H1>sadasda</H1>
+
         </div>
 
         <div class="botoes">
