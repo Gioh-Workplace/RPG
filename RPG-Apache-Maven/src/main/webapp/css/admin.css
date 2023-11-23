@@ -1,8 +1,8 @@
 body
 .form-container {
 
-    border-radius: 10px;
-    border: 2px solid #FFF;
+    border-radius: 20px;
+    border: 10px solid #FFF;
     background: #000;
     width: 50%;
     height: 10%;
@@ -41,10 +41,10 @@ table {
 
     border-radius: 10px;
     color: white;
-    border: 5px solid white;
+    border: 2px solid white;
     margin: 0 auto;
     width: 50%;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 tr:hover {

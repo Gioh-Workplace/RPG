@@ -51,7 +51,7 @@
 
         <div class="contentR">
 
-            <h2>Top ${sessionScope.top}</h2>
+            <h2>Ranking TOP ${sessionScope.top}</h2>
 
             <div class="table-responsive">
                 <table>

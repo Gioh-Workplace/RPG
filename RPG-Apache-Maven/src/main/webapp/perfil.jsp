@@ -27,7 +27,9 @@
         </div>
     </div>
 </c:if>
-<h2>${sessionScope.loggedUser} Profile </h2>
+
+<h2>  Seja bem vindo(a), ${sessionScope.loggedUser}
+ </h2>
 
 <div class="form-container">
         <h4>Username</h4>
