@@ -3,8 +3,8 @@ html{
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #000;
+    font-family: "Courier New", Courier, monospace;
+    background: #FFFFFF;
 
 }
 
@@ -22,7 +22,7 @@ body {
 
 
 body {
-    background-color: black;
+    background-color: #FFFFFF;
     font-family: Arial, sans-serif;
 }
 
@@ -37,11 +37,6 @@ body {
     width: 100%;
     height: 100%;
 }
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-}
 
 #board {
     width: 800px;
@@ -54,13 +49,26 @@ body {
 #background {
     margin-top: 70px;
     width: 950px;
-    height: 660px;
+    height: 560px;
     position: relative;
     top: 0;
-    left: 0;
-    background-image: url("../img/sala_Cobra.jpg"); /
+    left: 400px ;
+    background-image: url("../img/sala_Cobra.jpg");
     background-size: cover;
-    z-index: -2;
+    z-index: -10;
+
+}
+.superior {
+    width: 100%;
+    background-image: url("../img/cobra.png");
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    left: 400px ;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 #square {
@@ -86,4 +94,22 @@ body {
 .teste{
     position: relative;
     z-index: 10;
+}
+
+.button {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

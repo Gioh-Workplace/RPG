@@ -6,9 +6,16 @@
     display: flex;
     align-items: center;
     background-color: lightgray;
+    border-radius: 20px;
+
+
+}
+.creator:hover > :not ( :hover){
+    opacity: 0.5;
 }
 span{
-    font-size:24px;
+    word-wrap: break-word;
+    font-size:15px;
     margin-left: 5px;
     max-width: 160px;
     max-height: 160px;
@@ -20,10 +27,12 @@ span{
 
     width: 300px;
     height: 300px;
+    border-radius: 20px;
+
 }
 .creator p{
     margin: 10px;
-    font-family: sans-serif;
+    font-family: "Courier New", Courier, monospace;
     color: black;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -37,29 +46,32 @@ span{
 .creator a{
     width: 50px;
     font-size: 36px;
-
+    word-wrap: break-word;
 }
 .creator1{
+
     position: absolute;
     top: 250px;
-    left: 100px;
+    left: 250px;
+
 }
 .creator2{
     position: absolute;
     top: 250px;
-    right: 100px;
+    right: 250px;
 }
 .creator3{
     position: absolute;
     top: 650px;
-    left: 100px;
+    left: 250px;
 }
 .creator4{
     position: absolute;
     top: 650px;
-    right: 100px;
+    right: 250px;
 }
 .paragraph img{
+
     padding-top: 5px;
     width: 30px;
     height: 30px;
@@ -84,4 +96,5 @@ span{
 }
 .text p{
     font-weight: bold;
+    word-wrap: break-word;
 }

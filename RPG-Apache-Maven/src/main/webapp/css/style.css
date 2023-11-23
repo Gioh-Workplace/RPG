@@ -1,7 +1,7 @@
 
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Courier New", Courier, monospace;
     background: #000;
 
 }
@@ -100,6 +100,19 @@ body {
 }
 .dropdown{
     z-index: 3;
+}
+
+.button {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
 }
 
 

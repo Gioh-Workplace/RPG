@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -6,83 +5,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="css/game.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <title>Document</title>
 
+    <title>Document</title>
+    <style>
+        .button {
+            background-color: white;
+            border: 30px solid black;
+            padding: 30px;
+            margin: 5px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
 
+    <c:forEach var="Jogo" items="${game}">
 
-
-<c:if test="${sessionScope.loggedUser != null}">
-    <div class="menu">
-        <a href="/ranking-list">Ranking</a>
-        <a href="creditos.jsp">Creditos</a>
-        <a href="index.jsp">
-            <img src="img/logo.jpg" class="logo" alt="logo" id="logo">
-            <div class="barraInferior"></div>
-        </a>
-        <a href="sobre.jsp">Sobre</a>
-        <div class="dropdown">
-            <a href="#">Perfil</a>
-            <div class="dropdown-content">
-                <a href="perfil.jsp">Meu Perfil</a>
-                <a href="/logout">Sair</a>
-            </div>
+        <div class="img">
+            <img src="${Jogo.imgem}" alt="">
         </div>
-    </div>
-</c:if>
 
-<c:if test="${sessionScope.loggedUser == null}">
-    <div class="menu">
-        <a href="#">Ranking</a>
-        <a href="creditos.jsp">Creditos</a>
-        <a href="index.jsp">
-            <img src="img/logo.jpg" class="logo" alt="logo" id="logo1">
-            <div class="barraInferior"></div>
-        </a>
-        <a href="sobre.jsp">Sobre</a>
-        <a href="login.jsp">Login</a>
-    </div>
-</c:if>
+        <div class="Textos">
+            <h1>${Jogo.texto}</h1>
+            <H1>sadasda</H1>
+        </div>
 
-<c:forEach var="texto" items="${TextList}">
-    <c:choose>
-        <c:when test="${texto.id ==1}">
-            <p style="color: white">${texto.texto}</p>
-            <form action="/first-room" method="post">
-            <button>1 - Lutar</button>
-                <input type="hidden" name="button1" value="atacar">
-            </form>
-            <form action="/first-room" method="post">
-            <button>2 - Fugir</button>
-                <input type="hidden" name="button1" value="fugir">
-            </form>
-            <button>3 - Buscar na mochila</button>
-        </c:when>
-            <c:when test="${texto.id == 2 or texto.id == 3 or texto.id == 4}">
-                <c:if test="${requestScope.opcao eq 'atacando'}">
-                <p style="color: white">${texto.texto}</p>
-            </c:if>
-            </c:when>
+        <div class="botoes">
 
-        <c:when test="${texto.id == 5 or texto.id == 6 or texto.id == 7}">
-            <c:if test="${(requestScope.sobrevive == 1) and (texto.id == 5 or texto.id == 6)}">
-                <p style="color: white">${texto.texto}</p>
+            <c:if test="${Jogo.REF1 != null || Jogo.REF2 != 0}">
+                <a href="/Game-list?but=${Jogo.REF1}">${Jogo.OP1}</a>
             </c:if>
 
-            <c:if test="${(requestScope.sobrevive == 2) and (texto.id == 7)}">
-                <p style="color: white">${texto.texto}</p>
+            <c:if test="${Jogo.REF2 != null || Jogo.REF2 != 0}">
+                <button>
+                    <a href="/Game-list?but=${Jogo.REF2}">${Jogo.OP2}</a>
+                </button>
             </c:if>
 
-        </c:when>
-
-    </c:choose>
-</c:forEach>
-
-
+            <c:if test="${Jogo.REF3 != null || Jogo.REF2 != 0}">
+                <button>
+                    <a href="/Game-list?but=${Jogo.REF3}">${Jogo.OP3}</a>
+                </button>
+            </c:if>
+        </div>
+    </c:forEach>
 
 </body>
 
