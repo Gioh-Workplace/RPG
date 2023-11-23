@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -52,8 +51,9 @@
         <div class="image">
             <img src="img/PFP%20IA.jpg" class="creator_image" alt="first_creator_photo" id="Creator1">
         </div>
-        <div class="text">
-            <p>Giovani</p>
+
+        <div style="color:white" class="text">
+            <p style="color:white">Giovani</p>
             <span class="paragraph">
         Sou um dev amador com diversas
         </span>
@@ -63,7 +63,8 @@
             <span class="paragraph"> tentar colocar eles em pratica.
 
         </span>
-            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/Gioh-Workplace">Github</a></p>
+            <button class="custom-btn btn-8"><a href="https://github.com/Gioh-Workplace" style="color:white">GitHub</a></button>
+
         </div>
 
 
@@ -72,8 +73,8 @@
         <div class="image">
             <img src="img/Gabriel%20PFP.jpg" class="creator_image" alt="first_creator_photo" id="Creator2">
         </div>
-        <div class="text">
-            <p>Gabriel</p>
+        <div style="color:white" class="text">
+            <p style="color:white">Gabriel</p>
             <span class="paragraph">
                 Atualmente, estou cursando
 
@@ -85,8 +86,8 @@
             <span class="paragraph"> Sistemas na faculdade
 
         </span>
+            <button class="custom-btn btn-8"><a href="https://github.com/bielxrd" style="color:white">GitHub</a></button>
 
-            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/bielxrd">Github</a></p>
         </div>
 
 
@@ -95,12 +96,13 @@
         <div class="image">
             <img src="img/Caua%20pfp.jpg" class="creator_image" alt="first_creator_photo" id="Creator3">
         </div>
-        <div class="text">
-            <p>Caua</p>
+        <div style="color:white" class="text">
+            <p style="color:white">Caua</p>
             <span class="paragraph">
                       Hello, my name is Cauã
             </span>
-            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon"><a href="https://github.com/Cry199">Github</a></p>
+            <button class="custom-btn btn-8"><a href="https://github.com/Cry199" style="color:white">GitHub</a></button>
+
         </div>
 
 
@@ -109,15 +111,16 @@
         <div class="image">
             <img src="img/Agatha%20Pfp.jpeg" class="creator_image" alt="first_creator_photo" id="Creator4">
         </div>
-        <div class="text">
-            <p>Agatha</p>
+        <div style="color:white" class="text">
+            <p style="color:white">Agatha</p>
             <span class="paragraph">
         Hello, my name is Agatha, dev
             </span>
             <span class="paragraph">
           iniciante e escritora
             </span>
-            <p class="paragraph"><img src="img/Ghub%20icon.png" class="gitIcon" alt="gitIcon">  <a href="https://github.com/AgathaMercedes">Github</a></p>
+            <button class="custom-btn btn-8"><a href="https://github.com/AgathaMercedes" style="color:white">GitHub</a></button>
+
         </div>
 
 
