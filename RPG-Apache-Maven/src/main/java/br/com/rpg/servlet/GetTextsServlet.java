@@ -16,13 +16,27 @@ public class GetTextsServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        List<Texts> texts = new TextsDao().getTexts(1);
+        List<Texts> texts = new TextsDao().getTexts(randomId());
 
         HttpSession session = req.getSession();
         session.setAttribute("game", texts);
 
         req.getRequestDispatcher("game.jsp").forward(req,resp);
+    }
+
+    public int randomId() {
+        Random random = new Random();
+        int id = random.nextInt(1, 4) ;
+        if(id == 1) {
+            id = 1;
+
+        } else if (id == 2) {
+            id = 13;
+        } else if (id == 3) {
+            id = 17;
+        }
+
+        return id;
     }
 
 }
