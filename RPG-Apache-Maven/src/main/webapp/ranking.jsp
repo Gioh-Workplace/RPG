@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/ranking.css">
-        <title>Ranking Top 10</title>
+        <title>Ranking Top ${sessionScope.top}</title>
     </head>
     <body>
 

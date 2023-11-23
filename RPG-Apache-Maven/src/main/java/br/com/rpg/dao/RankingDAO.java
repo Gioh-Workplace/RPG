@@ -38,7 +38,6 @@ public class RankingDAO
                 usuarios.add(usuario);
 
             }
-
             System.out.println("Select feito com sucesso ranking");
 
             connection.close();
@@ -55,8 +54,8 @@ public class RankingDAO
 
         String SQL = "SELECT * FROM USUARIO WHERE ID > 1 ORDER BY PONTUACAO DESC";
 
-        try {
-
+        try
+        {
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
