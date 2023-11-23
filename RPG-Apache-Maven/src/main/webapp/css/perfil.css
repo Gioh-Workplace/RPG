@@ -3,23 +3,34 @@ h2 {
     align-items: center;
     justify-content: center;
     display: flex;
-    padding-top: 5px;
+    padding: 50px 500px ;
     font-size: 50px;
+
+
+}
+h4 {
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+
 }
 
 #delete-button h4 {
-   padding-left: 6px;
+    padding-left: 6px;
 
 }
 h6 {
     position: absolute;
     top: 0;
-    left: 5;
+    left: 5px;
     color: red;
 }
 
 .form-container a {
     color: white;
+
 }
 .form-container a:hover {
     color: darkred;
@@ -32,18 +43,19 @@ h6 {
     border-radius: 47px;
     border: 3px solid #FFF;
     padding: 20px;
-    width: 500px;
-    position: absolute;
+    width: 460px;
+    position: relative;
     top: 51%;
     left: 50%;
-    margin-top: 10px;
+    margin-top:290px;
     transform: translate(-50%, -50%);
+    font-size: 10px;
 }
 #email-update input {
     width: 50%;
     padding: 10px;
     border: 2px solid #FFF;
-    margin-bottom: 5px;
+    margin: 15px;
     background: white;
     color: #000;
     border-radius: 15px;
@@ -53,7 +65,7 @@ h6 {
     width: 50%;
     padding: 10px;
     border: 2px solid #FFF;
-    margin-bottom: 5px;
+    margin: 15px;
     background: white;
     color: #000;
     border-radius: 15px;
@@ -63,21 +75,33 @@ h6 {
     width: 50%;
     padding: 10px;
     border: 2px solid #FFF;
-    margin-bottom: 5px;
+    margin: 15px;
     background: white;
     color: #000;
     border-radius: 15px;
 }
 
-#username-update button, #email-update button, #password-update button, #delete-button button {
+#username-update button, #email-update button, #password-update button {
     width: 20%;
     padding: 10px;
     border: 2px solid #FFF;
     border-radius: 15px;
-    margin-top: 5px;
+
     background: white;
     color: #000;
-    margin-left: 10px;
+    margin: 10px 10px auto;
+
+}
+#delete-button button{
+    width: 20%;
+    padding: 10px;
+    border: 2px solid #FFF;
+    border-radius: 15px;
+
+    background: white;
+    color: #000;
+    margin: 10px 200px auto;
+
 }
 #username-update button:hover, #email-update button:hover, #password-update button:hover {
     background: #000;
@@ -87,4 +111,20 @@ h6 {
 #delete-button button:hover {
     background: #FF0000;
     color: #FFF;
+    margin: 10px auto; /* Adicione esta linha */
+    display: block;
+
+}
+.welcome {
+    text-align: center;
+    font-size: 24px;
+}
+
+.user-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5px 820px auto;
+
 }
