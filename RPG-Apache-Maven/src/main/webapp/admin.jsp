@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="css/admin.css">
 </head>
 <body>
+
 <c:if test="${sessionScope.adminLogado != null}">
     <div class="menu">
         <a href="/ranking-list">Ranking</a>
@@ -27,12 +28,12 @@
 </c:if>
 
 <div class="form-container">
-    <a id="show-usuarios" href="/usuarios-list">Usuarios</a>
-    <a id="show-ranking" href="/ranking-list-admin">Ranking</a>
-    <a id="show-podium" href="/update-ranking">Podio</a>
+    <a class="show" href="/usuarios-list">Usuarios</a>
+    <a class="show" href="/ranking-list-admin">Ranking</a>
+    <a class="show" href="/update-ranking">Podio</a>
+    <a class="show" href="/game-create">Criar Jogo</a>
+    <a class="show" href="/game-list">Listar Jogo</a>
 </div>
-
-
 
 <c:if test="${sessionScope.clickUser == 'usuarios'}">
     <div class="table-responsive hide" id="usuarios">
@@ -80,7 +81,6 @@
     </div>
 </c:if>
 
-
 <c:if test="${sessionScope.clickUser == 'podium'}">
     <div class="table-responsive hide" id="podium">
         <form action="/update-ranking" method="post">
@@ -89,6 +89,84 @@
             <input type="submit">
         </form>
     </div>
+</c:if>
+
+<c:if test="${sessionScope.clickUser == 'game-create'}">
+    <div class="table-responsive hide" id="game">
+        <form action="/game-create" method="post" class="registration-form">
+            <h1>Criar Jogo</h1>
+
+            <input type="text" name="texto" id="texto" placeholder="texto" required>
+            <input type="text" name="OP1" id="OP1" placeholder="OP1" required>
+            <input type="text" name="REF1" id="REF1" placeholder="REF1" required>
+            <input type="text" name="OP2" id="OP2" placeholder="OP2" required>
+            <input type="text" name="REF2" id="REF2" placeholder="REF2" required>
+            <input type="text" name="OP3" id="OP3" placeholder="OP3" required>
+            <input type="text" name="REF3" id="REF3" placeholder="REF3" required>
+            <input type="text" name="imgem" id="imgem" placeholder="imgem" required>
+
+            <button type="submit">Criar</button>
+        </form>
+    </div>
+</c:if>
+
+<c:if test="${sessionScope.clickUser == 'game-list'}">
+    <div class="table-responsive hide" id="game">
+        <table>
+            <tr>
+                <th> ID: </th>
+                <th> Texto: </th>
+                <th> OP1: </th>
+                <th> REF1: </th>
+                <th> OP2: </th>
+                <th> REF2: </th>
+                <th> OP3: </th>
+                <th> REF3: </th>
+                <th> Imagem: </th>
+                <th> Alterar: </th>
+                <th> Delete: </th>
+            </tr>
+            <c:forEach var="game" items="${gameList}">
+                <tr>
+                    <td>${game.id}</td>
+                    <td>${game.texto}</td>
+                    <td>${game.OP1}</td>
+                    <td>${game.REF1}</td>
+                    <td>${game.OP2}</td>
+                    <td>${game.REF2}</td>
+                    <td>${game.OP3}</td>
+                    <td>${game.REF3}</td>
+                    <td>${game.imgem}</td>
+                    <td>
+                        <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
+                    </td>
+                    <td>
+                        <a href="/off?idGameDelete=${game.id}">Deletar</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+</c:if>
+
+<c:if test="${sessionScope.clickUser == 'game-update'}">
+    <c:forEach var="gameUpdate" items="${gameUpd}">
+        <form action="/update-game" method="post" class="registration-form">
+            <h1>Alterar Jogo</h1>
+
+            <input type="hidden" name="idU" id="id1" value="${gameUpdate.id}" required>
+            <input type="text" name="texto" id="texto1" value="${gameUpdate.texto}" required>
+            <input type="text" name="OP1" id="OP11" value="${gameUpdate.OP1}" required>
+            <input type="text" name="REF1" id="REF11" value="${gameUpdate.REF1}"  required>
+            <input type="text" name="OP2" id="OP21" value="${gameUpdate.OP2}" required>
+            <input type="text" name="REF2" id="REF21" value="${gameUpdate.REF2}" required>
+            <input type="text" name="OP3" id="OP31" value="${gameUpdate.OP3}"  required>
+            <input type="text" name="REF3" id="REF31" value="${gameUpdate.REF3}" required>
+            <input type="text" name="imgem" id="imgem1" value="${gameUpdate.imgem}" required>
+
+            <button type="submit">Alterar</button>
+        </form>
+    </c:forEach>
 </c:if>
 
 </body>
