@@ -18,7 +18,7 @@ public class ConnectionPoolConfig {
 
         if (dataSource == null) {
             dataSource = new BasicDataSource();
-            dataSource.setUrl("jdbc:h2:mem:testdb");
+            dataSource.setUrl("jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE");
             dataSource.setUsername("sa");
             dataSource.setPassword("sa");
             dataSource.setMinIdle(5);
@@ -54,6 +54,7 @@ public class ConnectionPoolConfig {
     {
         try (Connection conn = getDataSource().getConnection(); Statement stmt = conn.createStatement())
         {
+            System.out.println("Rodando script");
             stmt.execute("RUNSCRIPT FROM 'src/main/java/br/com/rpg/backup/BancoBackup.sql'");
         }
         catch (SQLException e)
