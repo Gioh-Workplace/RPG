@@ -1,0 +1,115 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #FFFFFF;
+
+}
+
+
+
+
+.logo {
+    width: 127px;
+    height: 123px;
+    flex-shrink: 0;
+    bottom: 0;
+}
+
+
+
+
+body {
+    background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 36px;
+    margin-top: 50px;
+    text-align:center;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#board {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+}
+
+#background {
+    margin-top: 70px;
+    width: 950px;
+    height: 560px;
+    position: relative;
+    top: 0;
+    left: 400px ;
+    background-image: url("../img/sala_goblin.png");
+    background-size: cover;
+    z-index: -10;
+
+}
+.superior {
+    width: 100%;
+    background-image: url("../img/cobra.png");
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    left: 400px ;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#square {
+    width: 930px;
+    height: 200px;
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+}
+
+#narrator {
+    font-weight: bold;
+}
+
+#speech {
+    font-style: italic;
+}
+.teste{
+    position: relative;
+    z-index: 10;
+}
+
+.button {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

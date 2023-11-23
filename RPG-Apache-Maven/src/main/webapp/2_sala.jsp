@@ -68,57 +68,34 @@
         id="background">
 </div>
 
-
-<c:forEach var="texto" items="${TextList}">
-    <c:choose>
-        <c:when test="${texto.id ==1}">
-            <p style="color: white">${texto.texto}</p>
-            <div class="button-container">
-                <form action="/first-room" method="post">
-                    <button class="button">1 - Lutar</button>
-                    <input type="hidden" name="button1" value="atacar">
-                </form>
-                <form action="/first-room" method="post">
-                    <button class="button">2 - Fugir</button>
-                    <input type="hidden" name="button1" value="fugir">
-                </form>
-                <button class="button">3 - Buscar na mochila</button>
-            </div>
-        </c:when>
-        <c:when test="${texto.id == 2 or texto.id == 3 or texto.id == 4}">
-            <c:if test="${requestScope.opcao eq 'atacando'}">
-                <p style="color: white">${texto.texto}</p>
-            </c:if>
-        </c:when>
-
-        <c:when test="${texto.id == 5 or texto.id == 6 or texto.id == 7}">
-            <c:if test="${(requestScope.sobrevive == 1) and (texto.id == 5 or texto.id == 6)}">
-                <p style="color: white">${texto.texto}</p>
-            </c:if>
-
-            <c:if test="${(requestScope.sobrevive
-             == 2) and (texto.id == 7)}">
-                <p style="color: white">${texto.texto}</p>
-            </c:if>
-
-        </c:when>
-
-    </c:choose>
-</c:forEach>
 <script>
-    <!-- Redireciona para a pagina da proxima sala -->
+    // Esta é a função que gera um número aleatório de 0 a 10 e muda a classe do elemento container
+    function gerarNumero() {
+        // Gerar um número inteiro aleatório de 0 a 10
+        var numero = Math.floor(Math.random() * 3);
+        // Obter o elemento container pelo seu id
+        var container = document.getElementById("container");
+        // Remover todas as classes anteriores do elemento container
+        container.className = "";
+        // Adicionar a classe correspondente ao número gerado
+        container.classList.add(numero + "_sala.jsp");
+        <a href="1_sala.jsp">Creditos</a>
+    }
+
+
+</script>
+<script>
+
     function redirecionar() {
         var url = "http://localhost:8080/1_sala.jsp";
         window.location.href = url;
     }
 </script>
+</head>
 
-<button onclick="redirecionar()">Proxima sala</button>
-
-
-
+<button onclick="redirecionar()">Ir para a 1_sala</button>
 
 
-</body>
+
 
 </html>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="css/game.css">
+    <link type="text/css" rel="stylesheet" href="css/1_sala.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <title>Document</title>
     <style>
@@ -65,7 +65,7 @@
         id="superior">
 </div>
 <div
-        id="background">
+    id="background">
 </div>
 
 
@@ -105,17 +105,6 @@
 
     </c:choose>
 </c:forEach>
-<script>
-    <!-- Redireciona para a pagina da proxima sala -->
-    function redirecionar() {
-        var url = "http://localhost:8080/1_sala.jsp";
-        window.location.href = url;
-    }
-</script>
-
-<button onclick="redirecionar()">Proxima sala</button>
-
-
 
 
 
