@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/home.css">
     <title>Document</title>
-
 </head>
 <body>
 
@@ -47,12 +46,12 @@
 
 <div class="image"></div>
 <a href="game.jsp">
-    <form action="/CreateTexts" method="post" id="create-texts">
+    <form action="/Game" method="get" id="create-texts">
     <button class="glow-on-hover" type="submit">PLAY</button>
     </form>
 </a>
 
-
+<a href="/Game" class="glow-on-hover" >PLAY</a>
 
 </body>
 
