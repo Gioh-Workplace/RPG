@@ -122,15 +122,10 @@
                 <th> REF2: </th>
                 <th> OP3: </th>
                 <th> REF3: </th>
-                <th> Imagem: </th>
                 <th>Espada</th>
                 <th>Granada</th>
                 <th>Pocao</th>
                 <th>Armadura</th>
-                <th>EspadaDano</th>
-                <th>GranadaDano</th>
-                <th>PocaoPts</th>
-                <th>ArmaduraPts</th>
                 <th> Alterar: </th>
                 <th> Delete: </th>
             </tr>
@@ -144,7 +139,6 @@
                     <td>${game.REF2}</td>
                     <td>${game.OP3}</td>
                     <td>${game.REF3}</td>
-                    <td>${game.imgem}</td>
                     <td>${game.espada}</td>
                     <td>${game.granada}</td>
                     <td>${game.pocao}</td>
