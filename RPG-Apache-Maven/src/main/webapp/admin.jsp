@@ -133,13 +133,13 @@
             <h1>Criar Jogo</h1>
 
             <input type="text" name="texto" id="texto" placeholder="texto" required>
-            <input type="text" name="OP1" id="OP1" placeholder="OP1" required>
-            <input type="text" name="REF1" id="REF1" placeholder="REF1" required>
-            <input type="text" name="OP2" id="OP2" placeholder="OP2" required>
-            <input type="text" name="REF2" id="REF2" placeholder="REF2" required>
-            <input type="text" name="OP3" id="OP3" placeholder="OP3" required>
-            <input type="text" name="REF3" id="REF3" placeholder="REF3" required>
-            <input type="text" name="imgem" id="imgem" placeholder="imgem" required>
+            <input type="text" name="OP1" id="OP1" placeholder="OP1">
+            <input type="text" name="REF1" id="REF1" placeholder="REF1">
+            <input type="text" name="OP2" id="OP2" placeholder="OP2" >
+            <input type="text" name="REF2" id="REF2" placeholder="REF2" >
+            <input type="text" name="OP3" id="OP3" placeholder="OP3" >
+            <input type="text" name="REF3" id="REF3" placeholder="REF3" >
+            <input type="text" name="imgem" id="imgem" placeholder="imgem">
 
             <button type="submit">Criar</button>
         </form>
@@ -179,7 +179,7 @@
                         <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
                     </td>
                     <td>
-                        <a href="/off?idGameDelete=${game.id}">Deletar</a>
+                        <a href="/delete-for-id-game?idGameDelete=${game.id}">Deletar</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -209,7 +209,7 @@
                                         <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
                     </td>
                     <td>
-                        <a href="/off?idGameDelete=${game.id}">Deletar</a>
+                        <a href="/delete-for-id-game?idGameDelete=${game.id}">Deletar</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -243,23 +243,23 @@
         <form action="/update-game" method="post" class="registration-form">
             <h1>Alterar Jogo</h1>
 
-            <input type="hidden" name="idU" id="id1" value="${gameUpdate.id}" required>
-            <input type="text" name="texto" id="texto1" value="${gameUpdate.texto}" required>
-            <input type="text" name="OP1" id="OP11" value="${gameUpdate.OP1}" required>
-            <input type="text" name="REF1" id="REF11" value="${gameUpdate.REF1}"  required>
-            <input type="text" name="OP2" id="OP21" value="${gameUpdate.OP2}" required>
-            <input type="text" name="REF2" id="REF21" value="${gameUpdate.REF2}" required>
-            <input type="text" name="OP3" id="OP31" value="${gameUpdate.OP3}"  required>
-            <input type="text" name="REF3" id="REF31" value="${gameUpdate.REF3}" required>
-            <input type="text" name="imgem" id="imgem1" value="${gameUpdate.imgem}" required>
-            <input type="text" name="espada" id="espada" value="${gameUpdate.espada}" required>
-            <input type="text" name="granada" id="granada" value="${gameUpdate.granada}" required>
-            <input type="text" name="pocao" id="pocao" value="${gameUpdate.pocao}" required>
-            <input type="text" name="armadura" id="armadura" value="${gameUpdate.armadura}" required>
-            <input type="text" name="espadaDano" id="espadaDano" value="${gameUpdate.espadaDano}" required>
-            <input type="text" name="granadaDano" id="granadaDano" value="${gameUpdate.granadaDano}" required>
-            <input type="text" name="pocaoPts" id="pocaoPts" value="${gameUpdate.pocaoPts}" required>
-            <input type="text" name="armaduraPts" id="armaduraPts" value="${gameUpdate.armaduraPts}" required>
+            <input type="hidden" name="idU" id="id1" value="${gameUpdate.id}">
+            <input type="text" name="texto" id="texto1" value="${gameUpdate.texto}">
+            <input type="text" name="OP1" id="OP11" value="${gameUpdate.OP1}" >
+            <input type="text" name="REF1" id="REF11" value="${gameUpdate.REF1}"  >
+            <input type="text" name="OP2" id="OP21" value="${gameUpdate.OP2}" >
+            <input type="text" name="REF2" id="REF21" value="${gameUpdate.REF2}" >
+            <input type="text" name="OP3" id="OP31" value="${gameUpdate.OP3}"  >
+            <input type="text" name="REF3" id="REF31" value="${gameUpdate.REF3}" >
+            <input type="text" name="imgem" id="imgem1" value="${gameUpdate.imgem}">
+            <input type="text" name="espada" id="espada" value="${gameUpdate.espada}" >
+            <input type="text" name="granada" id="granada" value="${gameUpdate.granada}" >
+            <input type="text" name="pocao" id="pocao" value="${gameUpdate.pocao}" >
+            <input type="text" name="armadura" id="armadura" value="${gameUpdate.armadura}" >
+            <input type="text" name="espadaDano" id="espadaDano" value="${gameUpdate.espadaDano}" >
+            <input type="text" name="granadaDano" id="granadaDano" value="${gameUpdate.granadaDano}" >
+            <input type="text" name="pocaoPts" id="pocaoPts" value="${gameUpdate.pocaoPts}" >
+            <input type="text" name="armaduraPts" id="armaduraPts" value="${gameUpdate.armaduraPts}" >
             <button type="submit">Alterar</button>
         </form>
     </c:forEach>
