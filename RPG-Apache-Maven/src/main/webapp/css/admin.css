@@ -115,3 +115,11 @@ label {
     display: block;
     text-align: center;
 }
+input {
+    background-color: #000; /* Fundo preto */
+    color: #fff;
+    border: 2px solid #fff; /* Margem branca */
+    padding: 10px; /* Espaçamento interno */
+    margin: 5px; /* Espaçamento externo */
+}
+

@@ -14,12 +14,14 @@
         }
         #myButton1 {
             position: relative;
-            background-color: white;
+            background-color: black;
             left: 500px;
             padding: 30px;
-            margin: 2px;
+            margin:  2px;
             font-size: 20px;
             border-radius: 20px;
+
+
         }
 
         #game2 {
@@ -29,7 +31,7 @@
         }
         #myButton2 {
             position: relative;
-            background-color: white;
+            background-color: black;
             left: 850px;
             top: 1px;
             padding: 30px;
@@ -37,6 +39,35 @@
             font-size: 20px;
             border-radius: 20px;
             display: flex;
+        }
+        input {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            border: 2px solid #fff; /* Margem branca */
+            padding: 10px; /* Espaçamento interno */
+            margin: 5px; /* Espaçamento externo */
+
+        }
+        .botao {
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+            /* Centralizar o botão */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .destaque {
+            color: #fff;
+            background: black;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        /* esconder a sombra ao clicar no botão */
+        .destaque:active { /* quando o link estiver ativo, aplicar: */
+            box-shadow: none;
         }
 
 
@@ -130,9 +161,9 @@
 <c:if test="${sessionScope.clickUser == 'game-create'}">
     <div class="table-responsive hide" id="game">
         <form action="/game-create" method="post" class="registration-form">
-            <h1>Criar Jogo</h1>
+            <h1 style="color:white" align="center">Criar Jogo</h1>
 
-            <input type="text" name="texto" id="texto" placeholder="texto" required>
+            <input type="text" name="texto" id="texto"  placeholder="texto" required>
             <input type="text" name="OP1" id="OP1" placeholder="OP1" required>
             <input type="text" name="REF1" id="REF1" placeholder="REF1" required>
             <input type="text" name="OP2" id="OP2" placeholder="OP2" required>
@@ -141,15 +172,16 @@
             <input type="text" name="REF3" id="REF3" placeholder="REF3" required>
             <input type="text" name="imgem" id="imgem" placeholder="imgem" required>
 
-            <button type="submit">Criar</button>
+            <button type="submit" class="botao destaque" >Criar</button>
         </form>
     </div>
+
 </c:if>
 
 <c:if test="${sessionScope.clickUser == 'game-list'}">
     <div id="buttonContainer"  style="position: relative;">
         <div id="container1" style="position: absolute; top: 10px; left: 10px;">
-    <button id="myButton1" onclick="myFunction1()">Historia</button>
+    <button id="myButton1" style="color:white" onclick="myFunction1()">Historia</button>
             <div class="table-responsive hide" id="game1" style="display: none;">
         <table>
             <tr>
@@ -187,7 +219,7 @@
     </div>
 </div>
         <div id="container2" style="position: absolute; top: 10px; left: 200px;">
-            <button id="myButton2" onclick="myFunction2()">Ferramentas</button>
+            <button id="myButton2" style="color:white" onclick="myFunction2()">Ferramentas</button>
             <div class="table-responsive hide" id="game2" style="display: none;">
                         <table>
                             <tr>

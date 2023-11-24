@@ -51,7 +51,7 @@
     </form>
 </a>
 
-<a href="/Game" class="glow-on-hover" >PLAY</a>
+
 
 </body>
 
