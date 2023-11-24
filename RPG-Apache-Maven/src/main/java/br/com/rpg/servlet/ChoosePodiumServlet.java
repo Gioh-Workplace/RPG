@@ -29,6 +29,8 @@ public class ChoosePodiumServlet extends HttpServlet
             new RankingDAO().setPontuacaoA(id);
         }
 
+        req.getSession().setAttribute("clickUser", "");
+
         req.getRequestDispatcher("admin.jsp").forward(req, resp);
     }
 

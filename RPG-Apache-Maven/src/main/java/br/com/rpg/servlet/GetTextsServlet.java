@@ -16,6 +16,9 @@ public class GetTextsServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+
         List<Texts> texts = new TextsDao().getTexts(randomId());
 
         HttpSession session = req.getSession();
@@ -37,6 +40,16 @@ public class GetTextsServlet extends HttpServlet{
         }
 
         return id;
+    }
+
+    public int item(int i)
+    {
+        if (i == 17)
+        {
+
+        }
+
+        return i;
     }
 
 }

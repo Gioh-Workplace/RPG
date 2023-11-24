@@ -1,23 +1,47 @@
-
+/* cyrillic */
+@font-face {
+    font-family: 'Pixelify Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/pixelifysans/v1/CHy2V-3HFUT7aC4iv1TxGDR9DHEserHN25py2TTp0E1bZZNqgg.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Pixelify Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/pixelifysans/v1/CHy2V-3HFUT7aC4iv1TxGDR9DHEserHN25py2TTp0E1RZZNqgg.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Pixelify Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/pixelifysans/v1/CHy2V-3HFUT7aC4iv1TxGDR9DHEserHN25py2TTp0E1fZZM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 body {
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Pixelify Sans', sans-serif;
     background: #000;
-
 }
 
 .menu {
     border-radius: 47px;
     border: 3px solid #FFF;
     background: #000;
-    width: 1372px;
+    width: 75%;
     height: 140px;
-    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    z-index: 2;
+    padding: 0;
 }
 
 .menu a {
@@ -36,22 +60,8 @@ body {
     justify-content: center;
 }
 
-.barraInferior {
-    position: absolute;
-    background: #ffffff;
-    width: 165px;
-    height: 6px;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .logo {
-    background: url(" "), rgba(0, 0, 0, 0) 50% / cover no-repeat;
+    background: rgba(0, 0, 0, 0) 50% / cover no-repeat;
     width: 127px;
     height: 123px;
     flex-shrink: 0;
@@ -65,24 +75,13 @@ body {
     height: calc(100vh - 60px);
 }
 
-.play-button {
-    border: 2px solid white;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-
-}
-.play-button:hover {
-    background: white;
-    color: black;
-}
 .menu a:hover {
-    background: white;
-    color: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
 }
 
 /*  Menu dropdown abaixo */
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -114,5 +113,19 @@ body {
     margin: 10px;
     cursor: pointer;
 }
+
+.title {
+    font-size: 36px;
+    margin-top: 50px;
+    text-align:center;
+}
+
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 
 

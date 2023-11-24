@@ -1,15 +1,18 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 html{
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Courier New", Courier, monospace;
-    background: #FFFFFF;
-
+    font-family: 'Pixelify Sans', sans-serif;
+    background: black;
 }
-
-
-
 
 .logo {
     width: 127px;
@@ -18,12 +21,21 @@ body {
     bottom: 0;
 }
 
-
-
-
 body {
-    background-color: #FFFFFF;
+    background-color: black;
     font-family: Arial, sans-serif;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .title {
@@ -56,9 +68,10 @@ body {
     background-image: url("../img/sala_Cobra.jpg");
     background-size: cover;
     z-index: -10;
-
 }
-.superior {
+
+.superior
+{
     width: 100%;
     background-image: url("../img/cobra.png");
     height: 100px;
@@ -96,7 +109,7 @@ body {
     z-index: 10;
 }
 
-.button {
+button {
     background-color: white;
     border: 2px solid black;
     color: black;
@@ -108,8 +121,57 @@ body {
     margin: 10px;
     cursor: pointer;
 }
-.button-container {
+
+button-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+h1
+{
+    font-size: 50px;
+    margin: auto 100px;
+    text-align: center;
+    color: white;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.texto
+{
+    font-size: 45px;
+    margin: auto 100px auto 100px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.butt {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 25px;
+}
+
+.butt:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+
+
+
+
+

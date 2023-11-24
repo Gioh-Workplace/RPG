@@ -29,13 +29,14 @@ public class CreateUserServlet extends HttpServlet {
 
         boolean isCadastrado = usuarioDao.verificarCadastro(usuario);
 
-        if(isCadastrado) {
+        if(isCadastrado)
+        {
             req.setAttribute("mensagemInvalida", "Ja existe cadastrado com esse username ou email");
             req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
         }
-        else {
+        else
+        {
             usuarioDao.createUser(usuario);
-
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
 
