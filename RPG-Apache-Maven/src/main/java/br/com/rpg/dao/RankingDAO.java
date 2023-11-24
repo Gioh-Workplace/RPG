@@ -159,7 +159,7 @@ public class RankingDAO
         }
     }
 
-    public void updateRanking(int pontuacao, Usuario usuario)
+    public void updateRanking(int pontuacao, int idU)
     {
         String SQL = "UPDATE USUARIO SET PONTUACAO = ? WHERE id = ? AND PONTUACAO < ?";
 
@@ -169,7 +169,7 @@ public class RankingDAO
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setInt(1, pontuacao);
-            preparedStatement.setInt(2, usuario.getId());
+            preparedStatement.setInt(2, idU);
             preparedStatement.setInt(3, pontuacao);
 
             int rowsAffected = preparedStatement.executeUpdate();
