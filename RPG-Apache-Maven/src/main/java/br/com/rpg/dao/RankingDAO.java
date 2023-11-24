@@ -13,7 +13,7 @@ public class RankingDAO
 {
     public List<Usuario> listRankingTop(int pontuacaoA) {
 
-        String SQL = "SELECT * FROM USUARIO WHERE ID > 1 ORDER BY PONTUACAO DESC LIMIT ?";
+        String SQL = "SELECT * FROM USUARIO WHERE ID > 1 AND PONTUACAO > 0 ORDER BY PONTUACAO ASC LIMIT ?";
 
         try {
 
@@ -52,7 +52,7 @@ public class RankingDAO
 
     public List<Usuario> listRankingTop() {
 
-        String SQL = "SELECT * FROM USUARIO WHERE ID > 1 ORDER BY PONTUACAO DESC";
+        String SQL = "SELECT * FROM USUARIO WHERE ID > 1 ORDER BY PONTUACAO ASC";
 
         try
         {
@@ -161,7 +161,7 @@ public class RankingDAO
 
     public void updateRanking(int pontuacao, int idU)
     {
-        String SQL = "UPDATE USUARIO SET PONTUACAO = ? WHERE id = ? AND PONTUACAO < ?";
+        String SQL = "UPDATE USUARIO SET PONTUACAO = ? WHERE id = ? AND (PONTUACAO IS NULL OR ? < PONTUACAO)";
 
         try
         {
@@ -171,6 +171,9 @@ public class RankingDAO
             preparedStatement.setInt(1, pontuacao);
             preparedStatement.setInt(2, idU);
             preparedStatement.setInt(3, pontuacao);
+
+            System.out.println("pontuacao: " + pontuacao);
+            System.out.println("idU: " + idU);
 
             int rowsAffected = preparedStatement.executeUpdate();
 
