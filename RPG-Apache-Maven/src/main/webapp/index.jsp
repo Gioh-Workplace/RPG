@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -47,7 +48,7 @@
 <div class="image"></div>
 <a href="game.jsp">
     <form action="/Game" method="get" id="create-texts">
-    <button class="glow-on-hover" type="submit">PLAY</button>
+        <button class="glow-on-hover" type="submit">PLAY</button>
     </form>
 </a>
 

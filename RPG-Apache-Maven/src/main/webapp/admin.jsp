@@ -1,3 +1,4 @@
+
 <html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
@@ -181,74 +182,74 @@
 <c:if test="${sessionScope.clickUser == 'game-list'}">
     <div id="buttonContainer"  style="position: relative;">
         <div id="container1" style="position: absolute; top: 10px; left: 10px;">
-    <button id="myButton1" style="color:white" onclick="myFunction1()">Historia</button>
+            <button id="myButton1" style="color:white" onclick="myFunction1()">Historia</button>
             <div class="table-responsive hide" id="game1" style="display: none;">
-        <table>
-            <tr>
-                <th> ID:</th>
-                <th> Texto:</th>
-                <th> OP1:</th>
-                <th> REF1:</th>
-                <th> OP2:</th>
-                <th> REF2:</th>
-                <th> OP3:</th>
-                <th> REF3:</th>
-                <th> Alterar: </th>
-                <th> Delete: </th>
-            </tr>
-            <c:forEach var="game" items="${gameList}">
-                <tr>
-                    <td>${game.id}</td>
-                    <td>${game.texto}</td>
-                    <td>${game.OP1}</td>
-                    <td>${game.REF1}</td>
-                    <td>${game.OP2}</td>
-                    <td>${game.REF2}</td>
-                    <td>${game.OP3}</td>
-                    <td>${game.REF3}</td>
+                <table>
+                    <tr>
+                        <th> ID:</th>
+                        <th> Texto:</th>
+                        <th> OP1:</th>
+                        <th> REF1:</th>
+                        <th> OP2:</th>
+                        <th> REF2:</th>
+                        <th> OP3:</th>
+                        <th> REF3:</th>
+                        <th> Alterar: </th>
+                        <th> Delete: </th>
+                    </tr>
+                    <c:forEach var="game" items="${gameList}">
+                        <tr>
+                            <td>${game.id}</td>
+                            <td>${game.texto}</td>
+                            <td>${game.OP1}</td>
+                            <td>${game.REF1}</td>
+                            <td>${game.OP2}</td>
+                            <td>${game.REF2}</td>
+                            <td>${game.OP3}</td>
+                            <td>${game.REF3}</td>
 
-                    <td>
-                        <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
-                    </td>
-                    <td>
-                        <a href="/off?idGameDelete=${game.id}">Deletar</a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
-    </div>
-</div>
+                            <td>
+                                <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
+                            </td>
+                            <td>
+                                <a href="/off?idGameDelete=${game.id}">Deletar</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+        </div>
         <div id="container2" style="position: absolute; top: 10px; left: 200px;">
             <button id="myButton2" style="color:white" onclick="myFunction2()">Ferramentas</button>
             <div class="table-responsive hide" id="game2" style="display: none;">
-                        <table>
-                            <tr>
-                                <th>Espada</th>
-                                <th>Granada</th>
-                                <th>Pocao</th>
-                                <th>Armadura</th>
-                                <th> Alterar: </th>
-                                <th> Delete: </th>
-                            </tr>
-                            <c:forEach var="game" items="${gameList}">
-                                <tr>
-                                    <td>${game.espada}</td>
-                                    <td>${game.granada}</td>
-                                    <td>${game.pocao}</td>
-                                    <td>${game.armadura}</td>
+                <table>
+                    <tr>
+                        <th>Espada</th>
+                        <th>Granada</th>
+                        <th>Pocao</th>
+                        <th>Armadura</th>
+                        <th> Alterar: </th>
+                        <th> Delete: </th>
+                    </tr>
+                    <c:forEach var="game" items="${gameList}">
+                        <tr>
+                            <td>${game.espada}</td>
+                            <td>${game.granada}</td>
+                            <td>${game.pocao}</td>
+                            <td>${game.armadura}</td>
 
-                                    <td>
-                                        <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
-                    </td>
-                    <td>
-                        <a href="/off?idGameDelete=${game.id}">Deletar</a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
+                            <td>
+                                <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
+                            </td>
+                            <td>
+                                <a href="/off?idGameDelete=${game.id}">Deletar</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-</div>
     <script>
         function myFunction1() {
             var x = document.getElementById("game1");
