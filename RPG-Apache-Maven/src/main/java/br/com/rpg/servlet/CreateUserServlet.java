@@ -31,7 +31,7 @@ public class CreateUserServlet extends HttpServlet {
 
         if(isCadastrado)
         {
-            req.setAttribute("mensagemInvalida", "Ja existe cadastrado com esse username ou email");
+            req.setAttribute("mensagemInvalida", "Ja existe cadastro com esse username ou email");
             req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
         }
         else
