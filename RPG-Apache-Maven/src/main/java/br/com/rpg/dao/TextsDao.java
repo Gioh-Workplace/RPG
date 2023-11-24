@@ -15,7 +15,7 @@ import java.util.List;
 public class TextsDao {
     public void createTable()
     {
-        String SQL = "CREATE TABLE IF NOT EXISTS Textos (ID INT AUTO_INCREMENT PRIMARY KEY, Texto VARCHAR(550) NOT NULL,op1 VARCHAR(255), ref1 INT ,op2 VARCHAR(255), ref2 INT ,op3 VARCHAR(255), ref3 INT, image VARCHAR(255) null, espada INT null, granada INT null, pocao INT null, armadura INT null, espadaDano INT null, granadaDano INT null, pocaoPts INT null, armaduraPts INT null)";
+        String SQL = "CREATE TABLE IF NOT EXISTS Textos (ID INT AUTO_INCREMENT PRIMARY KEY, Texto VARCHAR(550) NOT NULL,op1 VARCHAR(255) null, ref1 INT null ,op2 VARCHAR(255), ref2 INT null,op3 VARCHAR(255), ref3 INT null, image VARCHAR(255) null, espada INT null, granada INT null, pocao INT null, armadura INT null, espadaDano INT null, granadaDano INT null, pocaoPts INT null, armaduraPts INT null)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -34,7 +34,7 @@ public class TextsDao {
 
     public void createTexts(Texts texts)
     {
-        String SQL = "INSERT INTO TEXTOS (Texto, op1, ref1, op2, ref2, op3, ref3, image, espada, granada, pocao, armadura, espadaDano, granadaDano, pocaoPts, armaduraPts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO TEXTOS (Texto, op1, ref1, op2, ref2, op3, ref3, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try
         {
@@ -49,15 +49,9 @@ public class TextsDao {
             preparedStatement.setString(6, texts.getOP3());
             preparedStatement.setInt(7, texts.getREF3());
             preparedStatement.setString(8, texts.getImgem());
-            preparedStatement.setInt(9, texts.getEspada());
-            preparedStatement.setInt(10, texts.getGranada());
-            preparedStatement.setInt(11, texts.getPocao());
-            preparedStatement.setInt(12, texts.getArmadura());
-            preparedStatement.setInt(13, 3);
-            preparedStatement.setInt(14, 6);
-            preparedStatement.setInt(15, 10);
-            preparedStatement.setInt(16, 4);
             preparedStatement.execute();
+
+
 
             System.out.println("Insert feito com sucesso");
 
@@ -65,7 +59,7 @@ public class TextsDao {
         }
         catch (Exception e)
         {
-            System.out.println("Erro na conexao");
+            System.out.println("Erro na conexao x");
             System.out.println(e.getMessage());
         }
     }
