@@ -20,8 +20,6 @@ public class PontuacaoUser extends javax.servlet.http.HttpServlet
     {
         String score = req.getParameter("score");
 
-        System.out.println(score);
-
         List<Usuario> usuarios = new UsuarioDao().listUsers();
 
         for (Usuario usuario : usuarios)
@@ -30,7 +28,8 @@ public class PontuacaoUser extends javax.servlet.http.HttpServlet
             {
                 int id = usuario.getId();
 
-                new RankingDAO().updateRanking(id, Integer.parseInt(score));
+
+                new RankingDAO().updateRanking(Integer.parseInt(score), id);
             }
         }
 
