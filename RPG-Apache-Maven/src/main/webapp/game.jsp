@@ -49,6 +49,8 @@
         if (session.getAttribute("startTime") == null) {
             session.setAttribute("startTime", new java.util.Date().getTime());
         }
+
+
     %>
 
     <div class="image">
@@ -67,7 +69,6 @@
         }
     </script>
 
-    <c:if test="">
         <div class="botoes">
 
             <c:choose>
@@ -137,9 +138,12 @@
             </c:choose>
 
         </div>
-    </c:if>
+
+
+    <c:set var="jogoId" value="${Jogo.id}" scope="page"/>
 
     <c:if test="${sessionScope.loggedUser != null}">
+
         <c:if test="${(Jogo.REF1 == null && Jogo.REF2 == null && Jogo.REF3 == null) || (Jogo.REF1 == 0 && Jogo.REF2 == 0 && Jogo.REF3 == 0) || (sessionScope.hpUsuario <= 0 || sessionScope.hpChefe <= 0)}">">
             <%
                 if (session.getAttribute("startTime") != null) {
@@ -150,7 +154,9 @@
                     long maxTime = 30000;
                     long score = maxTime - elapsedTime;
 
-                    if (Jogo.id == 3) {
+                    int jogoId = Integer.parseInt((String) pageContext.getAttribute("jogoId"));
+
+                    if (jogoId == 3) {
                         score -= 1000;
                     }
 
@@ -164,7 +170,10 @@
             <script>document.getElementById('scoreForm').submit();</script>
         </c:if>
     </c:if>
+
 </c:forEach>
+
+
 
 </body>
 
