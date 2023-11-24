@@ -49,8 +49,6 @@
         if (session.getAttribute("startTime") == null) {
             session.setAttribute("startTime", new java.util.Date().getTime());
         }
-
-
     %>
 
     <div class="image">
@@ -112,7 +110,7 @@
 
                     <c:if test="${Jogo.REF1 != null}">
                         <c:if test="${Jogo.REF1 != 0}">
-                            <button class="butt">
+                            <button class="buttt">
                                 <a href="/boss-fight?but=${Jogo.REF1}&hpUser=15&hpBoss=25">${Jogo.OP1}</a>
                             </button>
                         </c:if>
@@ -120,7 +118,7 @@
 
                     <c:if test="${Jogo.REF2 != null}">
                         <c:if test="${Jogo.REF2 != 0}">
-                            <button class="butt">
+                            <button class="buttt">
                                 <a href="/boss-fight?but=${Jogo.REF2}&hpUser=15&hpBoss=25">${Jogo.OP2}</a>
                             </button>
                         </c:if>
@@ -128,7 +126,7 @@
 
                     <c:if test="${Jogo.REF3 != null}">
                         <c:if test="${Jogo.REF3 != 0}">
-                            <button class="butt">
+                            <button class="buttt">
                                 <a href="/boss-fight?but=${Jogo.REF3}&hpUser=15&hpBoss=25">${Jogo.OP3}</a>
                             </button>
                         </c:if>
@@ -143,7 +141,6 @@
     <c:set var="jogoId" value="${Jogo.id}" scope="page"/>
 
     <c:if test="${sessionScope.loggedUser != null}">
-
         <c:if test="${(Jogo.REF1 == null && Jogo.REF2 == null && Jogo.REF3 == null) || (Jogo.REF1 == 0 && Jogo.REF2 == 0 && Jogo.REF3 == 0) || (sessionScope.hpUsuario <= 0 || sessionScope.hpChefe <= 0)}">">
             <%
                 if (session.getAttribute("startTime") != null) {
@@ -153,12 +150,6 @@
 
                     long maxTime = 30000;
                     long score = maxTime - elapsedTime;
-
-                    int jogoId = Integer.parseInt((String) pageContext.getAttribute("jogoId"));
-
-                    if (jogoId == 3) {
-                        score -= 1000;
-                    }
 
                     session.setAttribute("score", score);
                     session.removeAttribute("startTime");
