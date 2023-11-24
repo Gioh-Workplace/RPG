@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/home.css">
     <link type="text/css" rel="stylesheet" href="css/admin.css">
+    <style>
+
+        #game1 {
+            display: block;
+            position: relative;
+            height: 0.5px;
+        }
+        #myButton1 {
+            position: relative;
+            background-color: white;
+            left: 500px;
+            padding: 30px;
+            margin: 2px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        #game2 {
+            display: block;
+            position: relative;
+            height: 0.5px;
+        }
+        #myButton2 {
+            position: relative;
+            background-color: white;
+            left: 850px;
+            top: 1px;
+            padding: 30px;
+            margin: 2px;
+            font-size: 20px;
+            border-radius: 20px;
+            display: flex;
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -111,7 +147,10 @@
 </c:if>
 
 <c:if test="${sessionScope.clickUser == 'game-list'}">
-    <div class="table-responsive hide" id="game">
+    <div id="buttonContainer"  style="position: relative;">
+        <div id="container1" style="position: absolute; top: 10px; left: 10px;">
+    <button id="myButton1" onclick="myFunction1()">Historia</button>
+            <div class="table-responsive hide" id="game1" style="display: none;">
         <table>
             <tr>
                 <th> ID:</th>
@@ -122,10 +161,6 @@
                 <th> REF2:</th>
                 <th> OP3:</th>
                 <th> REF3:</th>
-                <th>Espada</th>
-                <th>Granada</th>
-                <th>Pocao</th>
-                <th>Armadura</th>
                 <th> Alterar: </th>
                 <th> Delete: </th>
             </tr>
@@ -139,10 +174,7 @@
                     <td>${game.REF2}</td>
                     <td>${game.OP3}</td>
                     <td>${game.REF3}</td>
-                    <td>${game.espada}</td>
-                    <td>${game.granada}</td>
-                    <td>${game.pocao}</td>
-                    <td>${game.armadura}</td>
+
                     <td>
                         <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
                     </td>
@@ -153,6 +185,57 @@
             </c:forEach>
         </table>
     </div>
+</div>
+        <div id="container2" style="position: absolute; top: 10px; left: 200px;">
+            <button id="myButton2" onclick="myFunction2()">Ferramentas</button>
+            <div class="table-responsive hide" id="game2" style="display: none;">
+                        <table>
+                            <tr>
+                                <th>Espada</th>
+                                <th>Granada</th>
+                                <th>Pocao</th>
+                                <th>Armadura</th>
+                                <th> Alterar: </th>
+                                <th> Delete: </th>
+                            </tr>
+                            <c:forEach var="game" items="${gameList}">
+                                <tr>
+                                    <td>${game.espada}</td>
+                                    <td>${game.granada}</td>
+                                    <td>${game.pocao}</td>
+                                    <td>${game.armadura}</td>
+
+                                    <td>
+                                        <a href="/game-list-for-id?updateGame=${game.id}">Alterar</a>
+                    </td>
+                    <td>
+                        <a href="/off?idGameDelete=${game.id}">Deletar</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+</div>
+</div>
+    <script>
+        function myFunction1() {
+            var x = document.getElementById("game1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function myFunction2() {
+            var x = document.getElementById("game2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </c:if>
 
 <c:if test="${sessionScope.clickUser == 'game-update'}">

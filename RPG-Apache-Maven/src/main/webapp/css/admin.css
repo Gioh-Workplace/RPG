@@ -1,4 +1,4 @@
-body
+
 .form-container {
 
     border-radius: 10px;
@@ -34,6 +34,8 @@ body
 
 
 .table-responsive {
+    left: 100px;
+    top: 100px;
 
 }
 
@@ -41,12 +43,11 @@ table {
 
     border-radius: 10px;
     color: white;
-    border: 5px solid white;
-    margin: 0 auto;
+
+    margin: 10px auto;
     width: 50%;
     font-size: 50px;
 }
-
 tr:hover {
     background-color: white;
     color: black;
@@ -57,6 +58,7 @@ th, td {
     padding: 8px;
     text-align: left;
     border: 1px solid white;
+    font-size: 20px;
 }
 
 td a {
