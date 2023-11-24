@@ -9,7 +9,6 @@ import java.io.IOException;
 @WebFilter("/admin/*")
 public class AuthenticationFilter implements Filter {
 
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -29,7 +28,6 @@ public class AuthenticationFilter implements Filter {
             request.setAttribute("message", "Usuario nao autenticado");
             request.getRequestDispatcher("/login.jsp").forward(httpServletRequest, response);
         }
-
 
     }
 

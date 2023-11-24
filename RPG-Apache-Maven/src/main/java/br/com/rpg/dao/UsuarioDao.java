@@ -13,7 +13,6 @@ import java.util.List;
 
 public class UsuarioDao {
 
-
     public void createTable() {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS USUARIO (ID INT AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL, SENHA VARCHAR(255) NOT NULL, PONTUACAO INT NULL)";
         String insertAdminSQL = "INSERT INTO USUARIO (USERNAME, EMAIL, SENHA, PONTUACAO) SELECT ?, ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM USUARIO WHERE USERNAME = ?)";
@@ -87,8 +86,6 @@ public class UsuarioDao {
                 String email = resultSet.getString("email");
 
                 usuarios.add(new Usuario(id, username, email));
-
-
             }
 
             System.out.println("Sucesso em selecionar e colocar na lista");
@@ -203,10 +200,7 @@ public class UsuarioDao {
                 if (resultSet.getString("username").equals(usuario.getUsername()) || resultSet.getString("email").equals(usuario.getEmail())) {
                     System.out.println("Usuario ja cadastrado");
                     return true;
-                } else {
-                    return false;
                 }
-
             }
 
             connection.close();

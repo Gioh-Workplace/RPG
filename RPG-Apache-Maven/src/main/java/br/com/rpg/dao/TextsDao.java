@@ -52,7 +52,6 @@ public class TextsDao {
             preparedStatement.execute();
 
 
-
             System.out.println("Insert feito com sucesso");
 
             connection.close();

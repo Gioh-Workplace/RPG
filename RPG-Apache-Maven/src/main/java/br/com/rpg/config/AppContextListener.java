@@ -25,6 +25,5 @@ public class AppContextListener implements ServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         System.out.println("Finalizando a aplicação");
-
     }
 }
